@@ -84,7 +84,7 @@
 #
 # for lst in rez:
 #     g.write(' '.join(lst[1]) + "\n")
-
+#
 # 3
 # f = open("test.in")
 # g = open("test.out", "w")
@@ -108,9 +108,128 @@
 #
 # f.close()
 # g.close()
-
+#
 # 4 lit mare, 3 lit mici, 4 cifre
-f = open("date.in")
-g = open("date.out", "w")
+# import random, string
+#
+#
+# def generatePassword():
+#     password = random.choice(string.ascii_uppercase)
+#     for i in range(3):
+#         password += random.choice(string.ascii_lowercase)
+#     for i in range(4):
+#         password += random.choice(string.digits)
+#     return password
+#
+# f = open("date.in")
+# g = open("date.out", "w")
+#
+# stud = []
+# for student in f:
+#     lst = student.split()
+#     login = lst[1].lower() + "." + lst[0].lower() + "@s.unibuc.ro,"
+#     login += generatePassword()
+#     g.write(f"{login}\n")
+#
+# 5
+#
+# def negative_pozitive(l):
+#     lneg, lpoz = [], []
+#
+#     for el in l:
+#         if el < 0:
+#             lneg.append(el)
+#         elif el > 0:
+#             lpoz.append(el)
+#
+#     return lneg, lpoz
+#
+#
+# l1, l2 = negative_pozitive([-1, 1, 5123, -324, 44])
+# fisier = input("nume fisier: ")
+# g = open(fisier, "w")
+# g.write(f"{sorted(l1)}\n{sorted(l2)}")
+#
+# # 6
+# import random
+# import string
+#
+# f = open("elevi.in")
+# elevi = {}
+#
+# for linie in f:
+#     l = linie.split()
+#     elevi[l[0]] = [l[1], l[2], [int(x) for x in l[3:]]]
+#
+# f.close()
+#
+# print(elevi)
+#
+#
+# def cresteNota(cnp, d):
+#     if cnp in d:
+#         d[cnp][2][0] += 1
+#         return d[cnp][2][0]
+#     return None
+#
+#
+# # cnp = input("cnp: ")
+# # print(cresteNota(cnp, elevi))
+# # print(cresteNota("2402900000041", elevi))
+# # print(cresteNota("2402900000040", elevi))
+#
+# def adaugaNote(cnp, lnote, d):
+#     if cnp in d:
+#         d[cnp][2].extend(lnote)
+#         return d[cnp][2]
+#     return None
+#
+#
+# # print(adaugaNote("2402900000041", [10, 8], elevi))
+# # print(adaugaNote("2402900000040", [10, 8], elevi))
+#
+#
+# def stergeElev(cnp, d):
+#     if cnp in d:
+#         del(d[cnp])
+#     return None
+#
+# # stergeElev("2402900000041", elevi)
+# # print(elevi)
+#
+#
+# rezd = []
+#
+# for cnp in elevi:
+#     aux = [elevi[cnp][0], elevi[cnp][1]]
+#
+#     for nota in elevi[cnp][2]:
+#         aux.append(nota)
+#
+#     rezd.append(aux)
+#
+# rezd = sorted(rezd, key=lambda el: (1.0*sum(el[2:])/(len(el)-2), el[0]), reverse=True)
+# # print(rezd)
+#
+#
+# def genereaza_coduri(d):
+#     for cnp in d:
+#         cod = ""
+#
+#         for i in range(3):
+#             cod += random.choice(string.ascii_letters)
+#         for i in range(3):
+#             cod += random.choice(string.digits)
+#
+#         d[cnp].append(cod)
+#
+#
+# genereaza_coduri(elevi)
+# print(elevi)
+#
+#
+#
+#
 
+# 7
 
