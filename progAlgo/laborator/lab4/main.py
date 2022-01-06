@@ -228,8 +228,104 @@
 # print(elevi)
 #
 #
-#
-#
-
 # 7
+#
+# lst = []
+#
+#
+# def citireLista():
+#     n = int(input("n = "))
+#     for i in range(n):
+#         lst.append(int(input()))
+#     return None
+#
+#
+# citireLista()
+#
+#
+# def chestieB(s, x, i=0, j=0):
+#     if i != j:
+#         for k in range(i, j+1):
+#             if s[k] > x:
+#                 return s[k]
+#     return -1
+#
+#
+# # lstCuv = ["c", "b", "a"]
+# ok = 1
+# for i in range(len(lst)):
+#     if chestieB(lst, lst[i], i, len(lst)-1) != -1:
+#         ok = 0
+#         break
+#
+# if ok == 1:
+#     print("Da")
+# else:
+#     print("Nu")
+
+# 8
+# def liste_x(x, *liste):
+#     nr = 0
+#     for lista in liste:
+#         if x in lista:
+#             nr += 1
+#     return nr
+
+
+# n = liste_x(3, [1, 5, 7], [3], [1, 8, 3], [])
+# print(n)
+
+# rez = None
+
+
+# def liste_xb(x, *liste):
+#     global rez
+#     nr = 0
+#     for lista in liste:
+#         if x in lista:
+#             nr += 1
+#     rez = nr
+
+
+# liste_xb(3, [1, 5, 7], [3], [1, 8, 3], [])
+# print(rez)
+
+# 9
+
+# def alipire(*numere):
+#     rez = 0
+#     for n in numere:
+#         aux = sorted(str(n))
+#         rez = 10*rez + int(aux[-1])
+#
+#     return rez
+#
+#
+# print(alipire(4251, 73, 8, 133))
+#
+#
+# def bazadoi(a, b, c):
+#     if alipire(a,b,c) == 111:
+#         return True
+#     return False
+#
+#
+# print(bazadoi(1001, 17, 100))
+
+# 10
+def cautare_cuvant(cuv, nume_fis_out, *nume_fis_in):
+    g = open(nume_fis_out, "w")
+    for fisier in nume_fis_in:
+        f = open(fisier)
+        i = 1
+        poz = []
+        for linie in f:
+            if linie.lower().__contains__(cuv):
+                poz.append(i)
+            i += 1
+        g.write(f"{fisier} {' '.join(str(x) for x in poz)}\n")
+
+
+cautare_cuvant("floare", "rez.txt", "eminescu.txt", "paunescu.txt")
+
 
