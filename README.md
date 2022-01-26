@@ -1,1 +1,1 @@
-# materia de la facultate, anul 1, CS @ FMI UNIBUC
+# materia de la facultate, CS @ FMI UNIBUC
