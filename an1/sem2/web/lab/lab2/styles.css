@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: lightcyan;
+    /*background-color: rgba(0, 0, 2, 0.3);*/
+}
+
+p {
+    width: 50px;
+    padding: 10px;
+    margin: 25px;
+    border: 1px solid black;
+}
+
+#alt {
+    font-style: italic;
+}
+
+h1 {
+    font-weight: lighter;
+}
+
+.test1 {
+    width: 30%;
+    height: 100px;
+    background-color: blanchedalmond;
+}
+
+.test2 {
+    width: 30%;
+    height: 50%;
+    background-color: black;
+}

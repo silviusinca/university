@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /Users/silviu/university/an1/sem2/poo/lab/tema0 Select CMakeLists.txt

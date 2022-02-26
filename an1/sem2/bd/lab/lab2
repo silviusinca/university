@@ -1,0 +1,60 @@
+select 1+2 from dual;
+
+select 1+2 from employees;
+
+select sysdate from dual;
+
+select to_char(sysdate, 'DAY/ MON / YEAR') from dual;
+select to_char(sysdate, 'D/ MM / YYYY') from dual;
+
+
+-- numele lunii in care a fost angajat fiecare salariat:
+select to_char(hire_date, 'MONTH'), to_char(hire_date, 'Month')
+from employees;
+
+-- ordonare 
+select to_char(hire_date, 'Month'), to_char(hire_date, 'Day'), employee_id
+from employees
+order by 1 asc, 3 desc;
+
+select to_char(hire_date, 'Month'), to_char(hire_date, 'Day'), employee_id
+from employees
+order by 1 asc, to_char(hire_date, 'D') desc;
+
+-- zi luna an ora minut
+select to_char(sysdate, 'DD/MM/YY HH24:MI:SS') from dual;
+
+
+select to_char(hire_date, 'YYYY'), to_char(hire_date, 'DDD'), employee_id, last_name || ' ' || first_name, to_char(hire_date, 'Day')
+from employees
+order by 1 asc, 2 desc;
+
+-- nume job data cand au inceput, 1987, 1989
+-- ord cresc dupa data de inceput
+select last_name, first_name, job_id, hire_date
+from employees
+where extract(year from hire_date) between 1987 and 1989
+order by hire_date;
+
+select last_name, first_name, job_id, hire_date
+from employees
+where hire_date between '20-feb-1987' and '1-may-1989'
+order by hire_date;
+
+select last_name, first_name, department_id
+from employees
+where department_id in (10, 30, 50)
+order by last_name, first_name;
+
+select last_name, first_name, job_id, salary
+from employees
+where salary not in (3200, 2700, 2500, 3100, 6200) and (lower(job_id) like lower('%CLerK%') or lower(job_id) like lower('%rEp%'));
+
+select last_name, first_name, job_id
+from employees
+where manager_id is null;
+
+select last_name, first_name, salary, commission_pct
+from employees
+where salary > commission_pct*salary*5;
+
