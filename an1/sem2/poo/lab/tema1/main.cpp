@@ -32,14 +32,15 @@ public:
         rating = obj.rating;
     }
 
+    // constructor default pentru citire
     Teatru() {
-        denumirePiesa = new char[256];
+        denumirePiesa = new char[256]; // aici e ok daca las asa? alta idee nu mi-a venit.
         strcpy(denumirePiesa, "empty");
         numarActori = 0;
         actori.clear();
         rating = 0;
 
-    }; // constructor default?
+    };
 
     // e complet desctructorul?
     ~Teatru() {
@@ -47,6 +48,7 @@ public:
         actori.clear();
     }
 
+    // gettere si settere:
     char* getDenumirePiesa() const {
         return denumirePiesa;
     }
@@ -82,47 +84,77 @@ public:
         rating = rating_;
     }
 
+    // operator overloading
     friend ostream &operator<<(ostream &os, const Teatru &teatru) {
         os << "Denumire Piesa: "<< teatru.denumirePiesa << "\nNumar actori: " << teatru.numarActori << "\nActori: ";
         for (auto actor : teatru.actori) {
             os << get<0>(actor) << ", in varsta de " << get<1>(actor) << " (de) ani; ";
         }
-        os << "Rating " << teatru.rating << "/5.";
+        os << "Rating " << teatru.rating << "/5.\n";
         return os;
     }
 
     friend istream &operator>>(istream &is, Teatru &teatru) {
-        is >> teatru.denumirePiesa >> teatru.numarActori;
-        char *nume;
+        cout << "Denumire piesa: ";
+        is.getline(teatru.denumirePiesa, 256);
+        cout << "\nNumarul actorilor: ";
+        is >> teatru.numarActori;
+        is.get();
         int varsta;
+        char *nume;
+        cout << "\nDetalii despre actori: ";
         for (int i = 0; i < teatru.numarActori; i++) {
-            is >> nume >> varsta;
+            cout << "\nNume: ";
+            is.getline(nume, 256);
+            cout << "\nVarsta: ";
+            is >> varsta;
+            is.get();
+            std::string str(nume);
             teatru.actori.emplace_back(nume, varsta);
         }
+        cout << "\nRating: ";
         is >> teatru.rating;
+        is.get();
         return is;
+    }
+
+    bool operator>(const Teatru &teatru) const {
+        return rating > teatru.rating;
+    }
+
+    bool operator<(const Teatru &teatru) const {
+        return rating < teatru.rating;
+    }
+
+    // compararea de aici se face tot pe baza de rating??
+    bool operator!=(const Teatru &teatru) const {
+        return !(teatru == *this);
+    }
+    // si aici la fel??
+    bool operator==(const Teatru &teatru) const {
+        return strcmp(denumirePiesa, teatru.denumirePiesa) == 0 &&
+               numarActori == teatru.numarActori &&
+               actori == teatru.actori &&
+               rating == teatru.rating;
+    }
+
+    // e bine cum am facut overloading aici?
+    void operator=(Teatru &teatru) {
+        strcpy(teatru.denumirePiesa, denumirePiesa);
+        teatru.numarActori = numarActori;
+        teatru.actori = actori;
+        teatru.rating = rating;
     }
 };
 
 int main() {
-    vector<tuple<string, int>> test;
-    test.emplace_back("Ion Ion", 25);
-    test.emplace_back("Narcis Ion", 34);
-    test.emplace_back("Sebastian Ion", 89);
-    test.emplace_back("Popa Ion", 15);
 
-    Teatru piesaTest("Piesa test", 4, test, 4.5);
+    Teatru teatru1, teatru2;
+    cin >> teatru1;// >> teatru2;
+    // Process finished with exit code 139 (interrupted by signal 11: SIGSEGV), cum rezolv ??, asta daca citesc doar un teatru
+    // Process finished with exit code 132 (interrupted by signal 4: SIGILL), cum rezolv ??, asta daca citesc 2 teatre;
+    cout << teatru1;// << teatru2;
 
-//    cout << piesaTest;
-    char* denumire;
-    int nrActori;
-    float rating_;
-    vector<tuple<string, int>> v;
-
-
-    Teatru teatruTest2;
-    cin >> teatruTest2;
-    cout << teatruTest2;
 
     return 0;
 }
