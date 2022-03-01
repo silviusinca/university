@@ -5,15 +5,48 @@
 
 using namespace std;
 
+class Actor {
+private:
+    string nume;
+    int varsta;
+
+public:
+    Actor(string nume_, int varsta_) {
+        nume = std::move(nume_);
+        varsta = varsta_;
+    }
+
+    Actor() {
+        nume = "";
+        varsta = -1;
+    }
+
+    string getNume() const {
+        return nume;
+    }
+
+    void setNume(string nume_) {
+        nume = std::move(nume_);
+    }
+
+    int getVarsta() const {
+        return varsta;
+    }
+
+    void setVarsta(int varsta_) {
+        varsta = varsta_;
+    }
+};
+
 class Teatru {
 private:
     char* denumirePiesa;
     int numarActori;
-    vector<tuple<string, int>> actori;
+    vector<Actor> actori;
     float rating;
 
 public:
-    Teatru(const char* denumirePiesa_, int numarActori_, vector<tuple<string, int>> actori_, float rating_) {
+    Teatru(const char* denumirePiesa_, int numarActori_, vector<Actor> actori_, float rating_) {
         size_t len = strlen(denumirePiesa_);
         denumirePiesa = new char[len];
         strcpy(denumirePiesa, denumirePiesa_);
@@ -22,7 +55,6 @@ public:
         rating = rating_;
     }
 
-    // constructor de copiere?
     Teatru(const Teatru &obj) {
         size_t len = strlen(obj.denumirePiesa);
         denumirePiesa = new char[len];
@@ -68,11 +100,11 @@ public:
         numarActori = numarActori_;
     }
 
-    vector<tuple<string, int>> getActori() const {
+    vector<Actor> getActori() const {
         return actori;
     }
 
-    void setActori(vector<tuple<string, int>> actori_) {
+    void setActori(vector<Actor> actori_) {
         actori = std::move(actori_);
     }
 
@@ -87,8 +119,8 @@ public:
     // operator overloading
     friend ostream &operator<<(ostream &os, const Teatru &teatru) {
         os << "Denumire Piesa: "<< teatru.denumirePiesa << "\nNumar actori: " << teatru.numarActori << "\nActori: ";
-        for (auto actor : teatru.actori) {
-            os << get<0>(actor) << ", in varsta de " << get<1>(actor) << " (de) ani; ";
+        for (const auto& actor : teatru.actori) {
+            os << actor.getNume() << ", in varsta de " << actor.getVarsta() << " (de) ani; ";
         }
         os << "Rating " << teatru.rating << "/5.\n";
         return os;
@@ -101,7 +133,7 @@ public:
         is >> teatru.numarActori;
         is.get();
         int varsta;
-        char *nume;
+        char nume[256];
         cout << "\nDetalii despre actori: ";
         for (int i = 0; i < teatru.numarActori; i++) {
             cout << "\nNume: ";
@@ -130,31 +162,29 @@ public:
     bool operator!=(const Teatru &teatru) const {
         return !(teatru == *this);
     }
+
     // si aici la fel??
     bool operator==(const Teatru &teatru) const {
         return strcmp(denumirePiesa, teatru.denumirePiesa) == 0 &&
                numarActori == teatru.numarActori &&
-               actori == teatru.actori &&
+               //               std::equal(actori.begin(), actori.end(), teatru.actori.begin()) && ??
                rating == teatru.rating;
     }
 
-    // e bine cum am facut overloading aici?
-    void operator=(Teatru &teatru) {
-        strcpy(teatru.denumirePiesa, denumirePiesa);
-        teatru.numarActori = numarActori;
-        teatru.actori = actori;
-        teatru.rating = rating;
+    Teatru& operator=(const Teatru &teatru) {
+        strcpy(denumirePiesa, teatru.denumirePiesa);
+        numarActori = teatru.numarActori;
+        actori = teatru.actori;
+        rating = teatru.rating;
+        return *this;
     }
 };
 
 int main() {
 
     Teatru teatru1, teatru2;
-    cin >> teatru1;// >> teatru2;
-    // Process finished with exit code 139 (interrupted by signal 11: SIGSEGV), cum rezolv ??, asta daca citesc doar un teatru
-    // Process finished with exit code 132 (interrupted by signal 4: SIGILL), cum rezolv ??, asta daca citesc 2 teatre;
-    cout << teatru1;// << teatru2;
-
+    cin >> teatru1 >> teatru2;
+    cout << teatru1 << teatru2;
 
     return 0;
 }
