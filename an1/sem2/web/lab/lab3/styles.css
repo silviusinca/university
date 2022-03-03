@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* .container {
+    margin: 32px;
+    border: 1px dotted darkslategray;
+    width: 50vw; 
+    height: 70vh;
+}
+
+.inner-left {
+    width: 100%;
+    height: 30%;
+    background-color: burlywood;
+}
+
+.inner-right {
+    width: 100%;
+    height: 70%;
+    background-color: rgb(132, 202, 202);
+} */
+
+/* p {
+    font-size: 32px;
+    margin: 16px;
+    border: 1px dotted darkslateblue;
+}
+
+p:first-child {
+    display: block;;
+}
+
+p:nth-child(2) {
+    display: block;
+}
+
+p:nth-child(3) {
+    display: block;
+}
+
+.paragrafe {
+    width: 50vw;
+    height: 50vh;
+    border: 3px solid darkslateblue;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+} */
+
+/* body {
+    height: 150vh;
+    padding: 60px;
+}
+
+div {
+    width: 100px;
+    height: 60px;
+}
+
+.first {
+    background-color: teal;
+    position: sticky;
+    top: 10px;
+}
+
+.second {
+    background-color: beige;
+    position: relative;
+}
+
+.third {
+    background-color: tomato;
+} */
+
+.first {
+    width: 100px;
+    height: 50px;
+    animation: animatie 2s infinite;
+    background-color: yellow;
+}
+
+.second {
+    margin-top: 300px;
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    animation: animatie 2s infinite;
+
+}
+
+@keyframes animatie {
+    0% {
+        background-color: red;
+        width: 200px;
+        height: 100px;
+    }
+
+    50% {
+        width: 100px;
+        height: 50px;
+    }
+    
+    100% {
+        background-color: yellow;
+        width: 200px;
+        height: 100px;
+    }
+    
+}
