@@ -252,8 +252,8 @@ public:
         }
 
         cout << "Ce operatii doresti sa utilizezi?\n";
+        help();
         while (deschis) {
-            help();
             cin >> optiune;
             switch (optiune) {
                 case 0:
