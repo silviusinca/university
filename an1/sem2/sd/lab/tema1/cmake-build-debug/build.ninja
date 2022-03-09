@@ -39,13 +39,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/silviu/university/an1/sem2/poo/lab/tema1/cmake-build-debug/
+cmake_ninja_workdir = /Users/silviu/university/an1/sem2/sd/lab/tema1/cmake-build-debug/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/silviu/university/an1/sem2/poo/lab/tema1/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/silviu/university/an1/sem2/poo/lab/tema1 -B/Users/silviu/university/an1/sem2/poo/lab/tema1/cmake-build-debug
+  COMMAND = cd /Users/silviu/university/an1/sem2/sd/lab/tema1/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/silviu/university/an1/sem2/sd/lab/tema1 -B/Users/silviu/university/an1/sem2/sd/lab/tema1/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -57,7 +57,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/silviu/university/an1/sem2/poo/lab/tema1/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Users/silviu/university/an1/sem2/sd/lab/tema1/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -72,7 +72,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_tema1: phony || CMakeFiles/tema1.dir
 
-build CMakeFiles/tema1.dir/main.cpp.o: CXX_COMPILER__tema1_Debug /Users/silviu/university/an1/sem2/poo/lab/tema1/main.cpp || cmake_object_order_depends_target_tema1
+build CMakeFiles/tema1.dir/main.cpp.o: CXX_COMPILER__tema1_Debug /Users/silviu/university/an1/sem2/sd/lab/tema1/main.cpp || cmake_object_order_depends_target_tema1
   DEP_FILE = CMakeFiles/tema1.dir/main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/tema1.dir
@@ -106,7 +106,7 @@ build tema1: CXX_EXECUTABLE_LINKER__tema1_Debug CMakeFiles/tema1.dir/main.cpp.o
 # =============================================================================
 
 #############################################
-# Folder: /Users/silviu/university/an1/sem2/poo/lab/tema1/cmake-build-debug
+# Folder: /Users/silviu/university/an1/sem2/sd/lab/tema1/cmake-build-debug
 
 build all: phony tema1
 

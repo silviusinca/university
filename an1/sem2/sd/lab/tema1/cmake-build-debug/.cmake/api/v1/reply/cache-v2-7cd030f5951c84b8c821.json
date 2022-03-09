@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/silviu/university/an1/sem2/poo/lab/tema1/cmake-build-debug"
+			"value" : "/Users/silviu/university/an1/sem2/sd/lab/tema1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/silviu/university/an1/sem2/poo/lab/tema1"
+			"value" : "/Users/silviu/university/an1/sem2/sd/lab/tema1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1087,7 +1087,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/silviu/university/an1/sem2/poo/lab/tema1/cmake-build-debug"
+			"value" : "/Users/silviu/university/an1/sem2/sd/lab/tema1/cmake-build-debug"
 		},
 		{
 			"name" : "tema1_IS_TOP_LEVEL",
@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/silviu/university/an1/sem2/poo/lab/tema1"
+			"value" : "/Users/silviu/university/an1/sem2/sd/lab/tema1"
 		}
 	],
 	"kind" : "cache",

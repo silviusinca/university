@@ -21,11 +21,16 @@ public:
         varsta = -1;
     }
 
+    ~Actor() {
+        nume.clear();
+    }
+
     string getNume() const {
         return nume;
     }
 
     void setNume(string nume_) {
+        nume.clear();
         nume = std::move(nume_);
     }
 
@@ -40,16 +45,16 @@ public:
     friend istream &operator>>(istream &is, Actor &actor) {
         cout << "Numele actorului: ";
         char nume_[256];
-        cin.getline(nume_, 256);
+        is.getline(nume_, 256);
         string aux(nume_);
-        actor.nume = aux;
+        actor.setNume(aux);
         cout << "Varsta actorului: ";
-        is >> actor.varsta;
+        int varsta_;
+        is >> varsta_;
+        actor.setVarsta(varsta_);
         is.get();
         return is;
     }
-
-
 };
 
 class Teatru {
@@ -80,12 +85,11 @@ public:
 
     // constructor default pentru citire
     Teatru() {
-        denumirePiesa = new char[256];
+        denumirePiesa = new char[6];
         strcpy(denumirePiesa, "empty");
         numarActori = 0;
         actori.clear();
         rating = 0;
-
     };
 
     ~Teatru() {
@@ -150,8 +154,8 @@ public:
         cout << "Detalii despre actori:\n";
         Actor actor;
         for (int i = 0; i < teatru.numarActori; i++) {
-            cin >> actor;
-            teatru.actori.emplace_back(actor);
+            is >> actor;
+            teatru.actori.push_back(actor);
         }
         cout << "Rating: ";
         is >> teatru.rating;
@@ -186,6 +190,9 @@ public:
     }
 
     Teatru& operator=(const Teatru &teatru) {
+        delete[] denumirePiesa;
+        size_t len = strlen(teatru.denumirePiesa);
+        denumirePiesa = new char[len];
         strcpy(denumirePiesa, teatru.denumirePiesa);
         numarActori = teatru.numarActori;
         actori = teatru.actori;
@@ -230,9 +237,9 @@ private:
         cout << piese[index_];
     }
 
-    void adaugaActor(int index_, const Actor& actor) {
+    void adaugaActor(int index_, const Actor& actor_) {
         vector<Actor> aux = piese[index_].getActori();
-        aux.push_back(actor);
+        aux.push_back(actor_);
         piese[index_].setActori(aux);
     }
 
@@ -251,9 +258,9 @@ public:
             piese.push_back(aux);
         }
 
-        cout << "Ce operatii doresti sa utilizezi?\n";
         help();
         while (deschis) {
+            cout << "Ce operatie doresti sa utilizezi?\n";
             cin >> optiune;
             switch (optiune) {
                 case 0:
@@ -269,11 +276,19 @@ public:
                 case 3:
                     cout << "Ce piesa doresti sa afisezi? (numaratoarea incepe de la 0)\n";
                     cin >> index;
+                    if (index >= numarPiese) {
+                        cout << "nu exista!";
+                        break;
+                    }
                     afisare(index);
                     break;
                 case 4:
                     cout << "Pentru ce piesa vrei sa mai adaugi un actor? (numaratoarea incepe de la 0)\n";
                     cin >> index;
+                    if (index >= numarPiese) {
+                        cout << "nu exista!";
+                        break;
+                    }
                     cin.get();
                     cin >> actor;
                     adaugaActor(index, actor);
@@ -281,6 +296,10 @@ public:
                 case 5:
                     cout << "Pentru ce piesa vrei sa schimbi rating-ul? (numaratoarea incepe de la 0)\n";
                     cin >> index;
+                    if (index >= numarPiese) {
+                        cout << "nu exista!";
+                        break;
+                    }
                     cout << "Introdu rating-ul nou: ";
                     cin >> rating_;
                     schimbaRating(index, rating_);
