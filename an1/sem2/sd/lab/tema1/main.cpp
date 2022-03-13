@@ -5,6 +5,7 @@
 #include <random>
 #include <chrono>
 #include <stdlib.h>
+#include <math.h>
 
 using namespace std;
 
@@ -33,44 +34,74 @@ void afis(const vector<int>& vect) {
     cout << endl;
 }
 
-void radixSort(vector<int>& vect, int N, int maxCifre) {
-
-    // start cronometru
+void bubbleSort(vector<int>& vect, int N) {
     auto start = std::chrono::high_resolution_clock::now();
-
-    int i, j, m, p = 1, index, temp, count = 0;
-    vector<int> pocket[10];
-    for (i = 0; i < maxCifre; i++) {
-        m = pow(10, i+1);
-        p = pow(10, i);
-        for(j = 0; j < N; j++) {
-            temp = vect[j]%m;
-            index = temp/p;
-            pocket[index].push_back(vect[j]);
-        }
-        count = 0;
-        for (j = 0; j<10; j++) {
-            //delete from linked lists and store to array
-            while (!pocket[j].empty()) {
-                vect[count] = *(pocket[j].begin());
-                pocket[j].erase(pocket[j].begin());
-                count++;
+    int i, j, aux;
+    for (i = 0; i < N; i++)
+        for (j = 0; j < i; j++)
+            if (vect[i] < vect[j]) {
+                aux = vect[i];
+                vect[i] = vect[j];
+                vect[j] = aux;
             }
-        }
-    }
 
-//    afis(vect);
-    // stop cronometru
     auto stop = std::chrono::high_resolution_clock::now();
     cout << "Timp de executare (in secunde): " << std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count() / 1000000.00000000000000 << endl;
 
 }
 
+/**
+# Sort an array a[0...n-1].
+gaps = [701, 301, 132, 57, 23, 10, 4, 1]  // Ciura gap sequence
+
+# Start with the largest gap and work down to a gap of 1
+# similar to insertion sort but instead of 1, gap is being used in each step
+foreach (gap in gaps)
+{
+    # Do a gapped insertion sort for every elements in gaps
+    # Each gap sort includes (0..gap-1) offset interleaved sorting.
+    for (offset = 0; offset < gap; offset++)
+      for (i = offset; i < n; i += gap)
+      {
+          # save a[i] in temp and make a hole at position i
+          temp = a[i]
+          # shift earlier gap-sorted elements up until the correct location for a[i] is found
+          for (j = i; j >= gap and a[j - gap] > temp; j -= gap)
+          {
+              a[j] = a[j - gap]
+          }
+          # put temp (the original a[i]) in its correct location
+          a[j] = temp
+       }
+}
+
+
+ 4^k + 3 * 2^(k-1) + 1
+*/
+
+void shellSort(vector<int>& v, int N, int Max) {
+    vector<int> gaps;
+    int k = 1, gap = 1;
+    gaps.push_back(gap);
+    while (gap <= Max) {
+        gap = pow(4, k) + 3 * pow(2, k-1) + 1;
+        gaps.push_back(gap);
+        k++;
+    }
+
+    int i;
+    for (i = gaps.size()-1; i >= 0; i--) {
+
+    }
+
+}
+
 int main() {
     vector<int> v;
-    int N = 1000000, Max = 1000000;
+    int N = 1000, Max = 100000;
     generateNumbers(v, N, Max);
-    radixSort(v, N, 6);
+    bubbleSort(v, N);
+    cout << test_sort(v, N);
 
     return 0;
 }
