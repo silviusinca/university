@@ -1,0 +1,1075 @@
+==================================================
+TEST 1: 1000 numere cu Max 10000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 2.9e-05
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 0.002561
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.000107
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.000114
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.00012
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.000172
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.001121
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.000336
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.000174
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.000125
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.000103
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.000103
+--------------------------
+==================================================
+==================================================
+TEST 2: 10000 numere cu Max 10000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.000388
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 0.323025
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.001557
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.00169
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.001702
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.000346
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.020838
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.003336
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.001695
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.001668
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.001015
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.000993
+--------------------------
+==================================================
+==================================================
+TEST 3: 100000 numere cu Max 10000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.004534
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 18.1274
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.018938
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.019545
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.019623
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.001768
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.137798
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.031409
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.015976
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.011513
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.009467
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.009716
+--------------------------
+==================================================
+==================================================
+TEST 4: 1000000 numere cu Max 10000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.039267
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.203517
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.220391
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.219412
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.01668
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 1.55865
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.316962
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.160212
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.116113
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.093464
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.09339
+--------------------------
+==================================================
+==================================================
+TEST 5: 10000000 numere cu Max 10000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.380995
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 2.21559
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 2.39521
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 2.40273
+--------------------------
+Nu se poate sorta cu Counting Sort: N e peste 10^8!
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 16.9955
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 3.2164
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 1.62783
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 1.18742
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.949012
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.944194
+--------------------------
+==================================================
+==================================================
+TEST 6: 100000000 numere cu Max 10000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 3.86126
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 23.889
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 25.4004
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 25.6037
+--------------------------
+Nu se poate sorta cu Counting Sort: N e peste 10^8!
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 187.015
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 32.6673
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 16.5842
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 11.9372
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 9.65336
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 9.65661
+--------------------------
+==================================================
+==================================================
+TEST 7: 1000 numere cu Max 1000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.510665
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 0.002354
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.000101
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.00011
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.000115
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.014073
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.001123
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.000462
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.000232
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.000165
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.000142
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.000119
+--------------------------
+==================================================
+==================================================
+TEST 8: 10000 numere cu Max 1000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.000356
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 0.240065
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.001492
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.0016
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.001631
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.013564
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.01303
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.004505
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.002275
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.001611
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.001388
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.00117
+--------------------------
+==================================================
+==================================================
+TEST 9: 100000 numere cu Max 1000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.004486
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 24.5037
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.01965
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.021489
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.021739
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.015304
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.140383
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.045333
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.022841
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.016199
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.013938
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.011662
+--------------------------
+==================================================
+==================================================
+TEST 10: 1000000 numere cu Max 1000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.053839
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.244354
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.263892
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.26939
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 0.032195
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 1.56553
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.461451
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.231892
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.164301
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.14098
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.118836
+--------------------------
+==================================================
+==================================================
+TEST 11: 10000000 numere cu Max 1000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.601821
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 2.92538
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 3.07394
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 3.09725
+--------------------------
+Nu se poate sorta cu Counting Sort: N e peste 10^8!
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 17.158
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 4.61513
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 2.32809
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 1.63832
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 1.42078
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 1.18373
+--------------------------
+==================================================
+==================================================
+TEST 12: 100000000 numere cu Max 1000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 5.77973
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 32.5751
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 33.6302
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 33.4197
+--------------------------
+Nu se poate sorta cu Counting Sort: N e peste 10^8!
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 187.141
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 46.6454
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 23.5392
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 16.6039
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 14.3188
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 11.9654
+--------------------------
+==================================================
+==================================================
+TEST 13: 1000 numere cu Max 100000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.509817
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 0.002453
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.000103
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.000112
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.000115
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 1.34427
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.001135
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.000621
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.000323
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.000211
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.000188
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.000166
+--------------------------
+==================================================
+==================================================
+TEST 14: 10000 numere cu Max 100000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.000361
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 0.239186
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.00148
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.001609
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.001625
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 1.34644
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.012562
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.006066
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.003168
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.002056
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.001839
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.001614
+--------------------------
+==================================================
+==================================================
+TEST 15: 100000 numere cu Max 100000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.004465
+--------------------------
+--------------------------
+Bubble Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Bubble Sort (in secunde): 24.0084
+--------------------------
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.019596
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.021169
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.021411
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 1.35614
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 0.140913
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.061235
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.031919
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.020665
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.01851
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.016229
+--------------------------
+==================================================
+==================================================
+TEST 16: 1000000 numere cu Max 100000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.053126
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.246299
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.265364
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 0.267974
+--------------------------
+--------------------------
+Counting Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Counting Sort (in secunde): 1.42601
+--------------------------
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 1.54682
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 0.617073
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 0.32224
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 0.208421
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 0.186252
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 0.163445
+--------------------------
+==================================================
+==================================================
+TEST 17: 10000000 numere cu Max 100000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 0.62375
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 3.00384
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 3.22165
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 3.24504
+--------------------------
+Nu se poate sorta cu Counting Sort: N e peste 10^8!
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 17.1772
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 6.20088
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 3.23547
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 2.10207
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 1.87464
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 1.64369
+--------------------------
+==================================================
+==================================================
+TEST 18: 100000000 numere cu Max 100000000
+--------------------------
+Basic sort din C++:
+Sortarea a fost corecta!
+Timp de executare pentru sort-ul basic din C++ Sort (in secunde): 7.05766
+--------------------------
+Bubble Sort: sortarea ar dura mult prea mult timp: peste 20 de minute
+--------------------------
+Shell Sort utilizand Sedgewick gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 35.8135
+--------------------------
+--------------------------
+Shell Sort utilizand Ciura gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 37.7493
+--------------------------
+--------------------------
+Shell Sort utilizand Tokuda gap sequence:
+Sortarea a fost corecta!
+Timp de executare pentru Shell Sort (in secunde): 37.7428
+--------------------------
+Nu se poate sorta cu Counting Sort: N e peste 10^8!
+--------------------------
+Merge Sort:
+Sortarea a fost corecta!
+Timp de executare pentru Merge Sort (in secunde): 186.02
+--------------------------
+--------------------------
+Radix Sort in baza 2:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 2 (in secunde): 62.4918
+--------------------------
+--------------------------
+Radix Sort in baza 4:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 4 (in secunde): 32.6562
+--------------------------
+--------------------------
+Radix Sort in baza 8:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 8 (in secunde): 21.1805
+--------------------------
+--------------------------
+Radix Sort in baza 10:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 10 (in secunde): 18.9767
+--------------------------
+--------------------------
+Radix Sort in baza 16:
+Sortarea a fost corecta!
+Timp de executare pentru Radix Sort in baza 16 (in secunde): 16.5451
+--------------------------
+==================================================
+Done
