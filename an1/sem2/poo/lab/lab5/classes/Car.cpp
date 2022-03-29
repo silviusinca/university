@@ -6,12 +6,14 @@
 #include <iostream>
 #include <utility>
 
-Car::Car(float speed_) {
-    speed = speed_;
-}
-
 Car::Car() {
     speed = 0;
+    marca = "";
+}
+
+Car::Car(float speed_, std::string marca_) {
+    speed = speed_;
+    marca = std::move(marca_);
 }
 
 float Car::getSpeed() const {
@@ -20,14 +22,6 @@ float Car::getSpeed() const {
 
 void Car::setSpeed(float speed_) {
     speed = speed_;
-}
-
-std::string Car::getMarca() {
-    return marca;
-}
-
-void Car::setMarca(std::string marca_) {
-    marca = std::move(marca_);
 }
 
 bool Car::operator<(const Car &other) const {
@@ -59,4 +53,12 @@ std::istream &operator>>(std::istream &is, Car &car) {
 std::ostream &operator<<(std::ostream &os, const Car &car) {
     os << car.speed;
     return os;
+}
+
+std::string Car::getMarca() {
+    return marca;
+}
+
+void Car::setMarca(std::string marca_) {
+    marca = std::move(marca_);
 }

@@ -9,16 +9,15 @@
 class Car {
 protected:
     float speed{};
-    static std::string marca;
-
-    static void setMarca(std::string marca_);
+    std::string marca;
 
 public:
-    explicit Car(float speed_);
     Car();
+    explicit Car(float speed_, std::string marca_);
     void setSpeed(float speed_);
     float getSpeed() const;
-    static std::string getMarca();
+    void setMarca(std::string marca_);
+    std::string getMarca();
     bool operator<(const Car &other) const;
     bool operator>(const Car &other) const;
     bool operator==(const Car &other) const;

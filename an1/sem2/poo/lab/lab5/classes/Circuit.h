@@ -16,7 +16,7 @@ public:
     explicit Circuit(std::vector<Car> cars_);
 
     void addCar(Car car);
-    static void showFinalRound(std::vector<Car> cars_);
+    void showFinalRound();
 };
 
 

@@ -4,6 +4,6 @@
 
 #include "Renault.h"
 
-std::string Renault::getMarca() const {
-    return marca;
+std::string Renault::getMarca() {
+    return "Renault";
 }

@@ -4,6 +4,6 @@
 
 #include "Dacia.h"
 
-std::string Dacia::getMarca() const {
-    return marca;
+std::string Dacia::getMarca() {
+    return "Dacia";
 }

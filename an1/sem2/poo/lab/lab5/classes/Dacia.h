@@ -8,10 +8,8 @@
 #include "Car.h"
 
 class Dacia : public Car {
-private:
-    const std::string marca = "Dacia";
 public:
-    std::string getMarca() const;
+    static std::string getMarca();
 };
 
 

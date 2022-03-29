@@ -8,6 +8,8 @@
 #include "Car.h"
 
 class Renault : public Car {
+public:
+    static std::string getMarca();
 };
 
 

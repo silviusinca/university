@@ -3,3 +3,7 @@
 //
 
 #include "Toyota.h"
+
+std::string Toyota::getMarca() {
+    return "Toyota";
+}
