@@ -10,12 +10,12 @@
 
 class Circuit {
 private:
-    std::vector<Car> cars;
+    std::vector<Car*> cars;
 
 public:
-    explicit Circuit(std::vector<Car> cars_);
+    explicit Circuit(std::vector<Car*> cars_);
 
-    void addCar(Car car);
+    void addCar(Car* car);
     void showFinalRound();
 };
 

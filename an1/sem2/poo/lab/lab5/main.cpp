@@ -16,7 +16,7 @@ int main() {
     toyota.setSpeed(125);
     toyota.setMarca(Toyota::getMarca());
 
-    std::vector<Car> test {dacie, renault, toyota};
+    std::vector<Car*> test {&dacie, &renault, &toyota};
 
 //    for (auto car : test)
 //        std::cout << car << std::endl;
@@ -25,7 +25,7 @@ int main() {
     Renault renault2;
     renault2.setSpeed(75);
     renault2.setMarca(Renault::getMarca());
-    circuit.addCar(renault2);
+    circuit.addCar(&renault2);
 
     circuit.showFinalRound();
 

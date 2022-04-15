@@ -51,7 +51,7 @@ std::istream &operator>>(std::istream &is, Car &car) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Car &car) {
-    os << car.speed;
+    os << car.marca << ' ' << car.speed;
     return os;
 }
 
