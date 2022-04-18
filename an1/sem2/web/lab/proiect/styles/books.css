@@ -35,6 +35,7 @@ body {
     letter-spacing: -.05em;
     line-height: 1;
     margin: .25em 0;
+    font-weight: bold;
 }
 
 .book-author {

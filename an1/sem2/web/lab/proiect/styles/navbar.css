@@ -36,14 +36,14 @@ header {
     display: flex;
 }
 
-.menu ul a {
+.menu ul li {
     width: 20%;
     height: inherit;
     color: #EEEEEE;
     display: inline-block;
 }
 
-.menu ul a:hover {
+.menu ul li:hover {
     background-color: #00ADB5;
 }
 
@@ -68,7 +68,7 @@ header {
         transition: max-height 0.3s;
     }
 
-    .menu ul a {
+    .menu ul li {
         text-align: left;
         width: 100%;
         height: 50px;
