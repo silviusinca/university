@@ -1,0 +1,64 @@
+body {
+    background-color: #EEEEEE;
+}
+
+.grid-content {
+    margin: auto;
+    max-width: 380px;
+}
+
+.grid-item {
+    background: #fff;
+    border-radius: .25em;
+    box-shadow: 0 .15em .175em hsla(0, 0%, 0%, .1);
+    margin: 1.5em;
+    overflow: hidden;
+}
+
+.imagine {
+    height: 14em;
+}
+
+.imagine img {
+    height: 100%;
+    object-fit: scale-down;
+    width: 100%;
+}
+
+.grid-text {
+    color: #222831;
+    padding: 2em;
+}
+
+.book-title {
+    font-size: 2em;
+    letter-spacing: -.05em;
+    line-height: 1;
+    margin: .25em 0;
+}
+
+.book-author {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.category {
+    color: #393E46;
+    font-size: .75em;
+    text-transform: uppercase;
+    word-spacing: .0625em;
+}
+
+@media only screen and (min-width: 768px) {
+    .grid-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-gap: 1.5em;
+        max-width: 1140px;
+        padding: 1.5em;
+    }
+
+    .grid-item {
+        margin: 0;
+    }
+}

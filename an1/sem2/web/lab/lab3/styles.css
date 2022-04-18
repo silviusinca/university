@@ -22,7 +22,7 @@
     background-color: rgb(132, 202, 202);
 } */
 
-/* p {
+p {
     font-size: 32px;
     margin: 16px;
     border: 1px dotted darkslateblue;
@@ -47,7 +47,7 @@ p:nth-child(3) {
     margin: 10px;
     display: flex;
     justify-content: space-around;
-} */
+}
 
 /* body {
     height: 150vh;
@@ -74,7 +74,7 @@ div {
     background-color: tomato;
 } */
 
-.first {
+/* .first {
     width: 100px;
     height: 50px;
     animation: animatie 2s infinite;
@@ -112,4 +112,4 @@ div {
 
 a {
     text-decoration: none;
-}
+} */
