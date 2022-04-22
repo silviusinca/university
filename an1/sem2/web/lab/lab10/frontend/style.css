@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.display-recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 99vw;
+    min-height: 30vh;
+    padding: 16px;
+    border: 5px solid black
+}
+
+.display-recipes-inner {
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.black-btn {
+    width: 125px;
+    height: 50px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+}
+
+.black-btn:hover {
+    opacity: 0.7;
+}
+
+.red-btn {
+    width: 75px;
+    height: 25px;
+    background-color: salmon;
+    border: 1px solid black;
+    color: white;
+}
+
+.red-btn:hover {
+    opacity: 0.7;
+}
+
+.forms {
+    width: 99vw;
+    height: 40vh;
+    display: flex;
+    margin-top: 16px;
+}
+
+.add-form-container {
+    width: 50%;
+    height: 100%;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.blue-btn {
+    width: 75px;
+    height: 25px;
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+.blue-btn:hover {
+    opacity: 0.7;
+}
+
+.update-form-container {
+    width: 50%;
+    height: 100%;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 10</title>
+    <script src="./script.js" async></script>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="display-recipes">
+        <h1>All recipes</h1>
+        <div class="display-recipes-inner"></div>
+        <button class="black-btn" id="update-recipes-button">Update</button>
+    </div>
+    <div class="forms">
+        <div class="add-form-container">
+            <h1>Add a new recipe</h1>
+            <div class="add-form">
+                <div class="form-input">
+                    <label for="add-chef">Chef</label>
+                    <input type="text" id="add-chef-input" name="add-chef" />
+                </div>
+                <div class="form-input">
+                    <label for="add-ct">Cooking time</label>
+                    <input type="number" id="add-cooking-time-input" name="add-ct"/>
+                </div>
+            </div>
+            <button class="blue-btn" id="add-recipe-button">Submit</button>
+        </div>
+        <div class="update-form-container">
+            <h1>Edit an existing recipe</h1>
+            <div class="update-form">
+                <div class="form-input">
+                    <label for="update-id">Id</label>
+                    <input type="text" id="update-id-input" name="update-id" />
+                </div>
+                <div class="form-input">
+                    <label for="update-chef">Chef</label>
+                    <input type="text" id="update-chef-input" name="update-chef" />
+                </div>
+                <div class="form-input">
+                    <label for="update-ct">Cooking time</label>
+                    <input type="number" id="update-cooking-time-input" name="update-ct"/>
+                </div>
+            </div>
+            <button class="blue-btn" id="update-recipe-button">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
