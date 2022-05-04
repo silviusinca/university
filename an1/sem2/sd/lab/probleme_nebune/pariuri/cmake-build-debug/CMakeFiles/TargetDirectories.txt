@@ -1,0 +1,3 @@
+/Users/silviu/university/an1/sem2/sd/lab/probleme_nebune/pariuri/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/silviu/university/an1/sem2/sd/lab/probleme_nebune/pariuri/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/silviu/university/an1/sem2/sd/lab/probleme_nebune/pariuri/cmake-build-debug/CMakeFiles/pariuri.dir
