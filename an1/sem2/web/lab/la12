@@ -1,0 +1,51 @@
+/* LAMBDA */
+
+// ex1
+void foo(int(*bar) (int, int)) {
+    std::cout << bar(1,2);
+}
+
+int add (int x, int y) {
+    return x + y;
+}
+
+int main() {
+    foo(add); // afsieaza 3;
+}
+
+
+// ex2
+
+vector<void(*)(int x, int y)> handlers;
+void onclick(int x, int y) {
+    for (auto handler : handlers) 
+        handler(x, y);
+}
+
+
+// ex3
+
+void foo1(void(*bar)()) {
+    bar();
+}
+
+void foo2(void(*bar)(int, int)) {
+    bar(1, 2); // 13
+    bar(1, 2); // 14
+}
+
+int main() {
+    int z = 10, z2 = 20;
+    foo1([](){ std::cout << "test!"; }); // expresie lambda
+    foo2([z, z2](int x, int y){ std::cout << x + y + z - z2; });
+    foo2([=](int x, int y){ std::cout << x + y + z - z2; }); // cu "=" poate lua toate variabilele din scope, altfel da eroare daca incercam sa folosim alte variabile car enu sunt mentionate in []
+    
+    foo2([=](int x, int y){ std::cout << x + y + z; z++ });
+    std::cout << z; // 10
+
+    foo2([&](int x, int y){ std::cout << x + y + z; z++ });
+    std::cout << z; // 11, creste z-ul daca folosim '&'
+
+}
+
+
