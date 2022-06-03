@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c1 {
+            color: green;
+        }
+        .c2 {
+            color: red;
+        }
+        .c3 {
+            color: blue;
+        }
+        .c4 {
+            color: blueviolet;
+        }
+        .c5 {
+            color: yellowgreen;
+        }
+
+    </style>
+
+</head>
+<body>
+    <script async>
+        console.log("working?");
+        const bodyNode = document.getElementsByTagName("body")[0];
+        const currentDate = new Date();
+        const N = currentDate.getMinutes();
+        if (N < 10) {
+            N = 10;
+        }
+        console.log(N);
+
+        const clase = ["c1", "c2", "c3", "c4", "c5"];
+
+        const elemente = [];
+        
+        for (let i = 1; i <= N; i++) {
+            const element = document.createElement("p");
+            element.innerHTML = "Silviu-Gabriel";
+            const x = clase[Math.floor(Math.random() * 5)];
+            element.classList.add(x);
+            bodyNode.appendChild(element);
+        }
+
+        const pars = document.getElementsByTagName("p");
+        for(let par of pars) {
+          par.addEventListener("click", (e) => {
+             const toBeDeletedPars = document.querySelectorAll(`.${par.classList[0]}`);
+             for(let p of toBeDeletedPars) {
+                 p.remove()
+             }
+             e.stopPropagation()
+          })
+      }
+
+      document.addEventListener("click", (e) => {
+          window.alert(e.clientY)
+      })
+
+    
+    </script>
+</body>
+</html>

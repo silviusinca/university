@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 1</title>
+
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr;
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            border: 1px solid black;
+        }
+        .patrat:nth-child(even) {
+            border: 1px solid red;
+        }
+
+        .patrat:nth-child(odd) {
+            border: 1px solid blue;
+        }
+
+        @media screen and (max-width: 800px) {
+            #container {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                width: 50vw;
+            }
+
+            body {
+                animation: animatie 2s infinite;
+            }
+        }
+
+      @keyframes animatie {
+          0% {
+              background-color: white;
+          }
+          50% {
+              background-color: yellow;
+          }
+          100% {
+              background-color: white;
+          }
+      }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+    </div>
+</body>
+</html>
