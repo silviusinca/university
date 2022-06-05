@@ -63,3 +63,10 @@ body {
         margin: 0;
     }
 }
+
+.random {
+    font-weight: 300;
+    margin-top: 0;
+    margin-left: 1em;
+    padding: 0;
+}
