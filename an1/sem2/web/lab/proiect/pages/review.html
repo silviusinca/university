@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Review</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> <!-- burgir -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./../styles/contact.css">
     
     <script src="./../scripts/index.js" async></script>
+    <script src="./../scripts/review.js" async></script>
 </head>
 <body>
     <header>
@@ -35,11 +36,12 @@
 
     <div class="container-contact">
         <form class="contact container-contact-item container-contact-1">
-            <h1 id="contact-title">Contact us!</h1>
-            <input name="name" type="text" class="feedback-input animatie-dreapta-1" placeholder="Username" />   
+            <h1 id="contact-title">Review a book!</h1>
+            <input name="name" type="text" class="feedback-input animatie-dreapta-1" id="testing" placeholder="Username" />   
             <input name="email" type="text" class="feedback-input animatie-dreapta-2" placeholder="Email" />
-            <textarea name="text" class="feedback-input animatie-dreapta-3" placeholder="Your message..."></textarea>
-            <input type="submit" value="Send"/>
+            <textarea name="text" class="feedback-input animatie-dreapta-3" placeholder="Your review..."></textarea>
+
+            <input type="submit" id="send-btn" value="Send"/>
         </form>
         <div class="container-contact-item container-contact-2">
             Sugar plum soufflé pie sweet tootsie roll tart icing bonbon jujubes. Dragée donut candy canes gummi bears gummi bears candy chocolate bar soufflé pie. Dragée bonbon candy canes cupcake sweet macaroon chupa chups lemon drops. Tiramisu soufflé lollipop sesame snaps topping pie.

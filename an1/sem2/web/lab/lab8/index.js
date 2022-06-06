@@ -67,10 +67,10 @@ inputs[1].addEventListener("change", (e) => {
 if (localStorage.getItem("email")) { // daca e dif de null
     content.style.display = "none";
 } else {
-    button.disabled = "true";
+    button.disabled = true;
     content.style.display = "block flex";
     if (emailRegex.test(email) && passRegex.test(pass)) {
-        button.disabled = "False";
+        button.disabled = false;
     }
 
 }

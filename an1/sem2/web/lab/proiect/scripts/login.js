@@ -21,10 +21,3 @@ const clockFun = () => {
 
 clockFun(); // apeleze functia ca sa imi afiseze ceasul imediat dupa reload
 setInterval(clockFun, 1000); // setinterval sa imi updateze ceasul la fiecare secunda
-
-
-
-
-
-
-
