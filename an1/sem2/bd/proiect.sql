@@ -56,28 +56,31 @@ create table STOC(  id_stoc     number(4)   constraint pk_stoc primary key,
                     constraint fk_id_carte_stoc foreign key(id_carte) references CARTI(id_carte)
                 );
 
-insert into locatii
+-- inserare tabela locatii
+insert into LOCATII
 values (100, 'Bucuresti', 'Bulevardul Decebal 24');
-insert into locatii
+insert into LOCATII
 values (101, 'Cluj', 'Strada Macului 245');
-insert into locatii
+insert into LOCATII
 values (102, 'Timisoara', 'Aleea Unirii 13');
-insert into locatii
+insert into LOCATII
 values (103, 'Bucuresti', 'Calea Victoriei 97');
-insert into locatii
+insert into LOCATII
 values (104, 'Bucuresti', 'Strada Elizabeta 17');
-insert into locatii
+insert into LOCATII
 values (105, 'Bucuresti', 'Aleea Buchetului 8');
-insert into locatii
+insert into LOCATII
 values (106, 'Cluj', 'Bulevardul Eroilor 873');
-insert into locatii
+insert into LOCATII
 values (107, 'Braila', 'Strada Obor 3');
-insert into locatii
+insert into LOCATII
 values (108, 'Timisoara', 'Strada Timisului 1');
-insert into locatii
+insert into LOCATII
 values (109, 'Cluj', 'Bulevardul Basarabia 19');
+-- verif tabela locatii
+select * from LOCATII;
 
-
+-- inserare tabela librarie
 insert into LIBRARIE
 values (200, 'Carturesti Decebal', 100);
 insert into LIBRARIE
@@ -98,8 +101,10 @@ insert into LIBRARIE
 values (208, 'Carturesti Timisului', 108);
 insert into LIBRARIE
 values (209, 'Carturesti Basarabia', 109);
+-- verif tabela librarie
+select * from LIBRARIE;
 
-
+-- inserare tabela angajati
 -- manageri
 insert into ANGAJATI
 values (300,  'Raducan', 'Mihai', 'm.raducan@gmail.com', '0749135222', to_date('02-02-2014', 'dd-mm-yyyy'), null, 3000, 200, 'Manager');
@@ -152,8 +157,10 @@ insert into ANGAJATI
 values (323,  'Ionescu', 'Denisa', 'd.ionescu@gmail.com', '0749130833', to_date('01-01-2022', 'dd-mm-yyyy'), 308, 1800, 208, 'Librar');
 insert into ANGAJATI
 values (324,  'Dobre', 'Matei', 'm.dobre@gmail.com', '0745130812', to_date('03-10-2018', 'dd-mm-yyyy'), 309, 2100, 209, 'Librar');
+-- verificare tabela angajati
+select * from ANGAJATI;
 
-
+-- inserare tabela editura
 insert into EDITURA
 values (400, 'Humanitas', to_date('01-01-1995', 'dd-mm-yyyy'));
 insert into EDITURA
@@ -164,8 +171,10 @@ insert into EDITURA
 values (403, 'Hyperion', to_date('30-07-2010', 'dd-mm-yyyy'));
 insert into EDITURA
 values (404, 'Polirom', to_date('02-08-1990', 'dd-mm-yyyy'));
+-- verif tabela editura
+select * from EDITURA;
 
-
+-- inserare tabela categorie
 insert into CATEGORIE
 values (500, 'Fantasy');
 insert into CATEGORIE
@@ -176,8 +185,10 @@ insert into CATEGORIE
 values (503, 'Nonfiction');
 insert into CATEGORIE
 values (504, 'Filosofie');
+-- verif tabela categorie
+select * from CATEGORIE;
 
-
+-- inserare tabela carti
 insert into CARTI
 values (600, 'The Three-Body Problem', 'Liu', 'Cixin', 65, 402, 502);
 insert into CARTI
@@ -198,8 +209,10 @@ insert into CARTI
 values (608, 'Sword of Destiny', 'Sapkowski', 'Andrzej', 78, 403, 500);
 insert into CARTI
 values (609, 'Season of Storms', 'Sapkowski', 'Andrzej', 125.59, 402, 500);
+-- verif tabela carti
+select * from CARTI;
 
-
+-- inserare tabela stoc
 insert into STOC
 values (2000, 600, 200, 12);
 insert into STOC
@@ -254,6 +267,8 @@ insert into STOC
 values (2801, 604, 208, 8);
 insert into STOC
 values (2802, 605, 208, 3);
+-- verif tabela stoc
+select * from STOC;
 
 -- 1. Afisati numele pentru editurile care au media preturilor cartilor mai mare decat media totala a preturilor tuturor cartilor
 with total_edituri as (select e.nume_editura, sum(c.pret) as total 
