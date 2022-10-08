@@ -1,0 +1,4 @@
+Reprezentari:
+    - matrice de adiacenta  O(n^2)
+    - lista de adiacenta    O(n + 2*m)
+    - lista de muchii       O(m)
