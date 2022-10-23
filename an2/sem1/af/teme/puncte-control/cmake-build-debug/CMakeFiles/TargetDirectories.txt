@@ -1,0 +1,3 @@
+C:/Users/Silviu/university/an2/sem1/af/teme/puncte-control/cmake-build-debug/CMakeFiles/puncte_control.dir
+C:/Users/Silviu/university/an2/sem1/af/teme/puncte-control/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Silviu/university/an2/sem1/af/teme/puncte-control/cmake-build-debug/CMakeFiles/rebuild_cache.dir
