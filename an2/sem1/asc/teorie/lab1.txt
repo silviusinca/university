@@ -1,0 +1,157 @@
+registrii:
+    - "variabile" ale procesorului
+    - spatiu de stocare pe procesor 
+    - valorile din reg sunt rapid de accesat fata de val din RAM
+
+
+Registru    ->  Conventie
+%eax        ->  (accumulator)   utilizat in op aritmetice si pentru a retine codurile apelurilor de sistem
+%ebx        ->  (base)          utilizat in operatii aritmetice
+%ecx        ->  (counter)       utilizat pe post de index in structurile repetitive
+%edx        ->  (data)          utilizat in operatii aritmetice
+
+%esi        ->  (source index)      |  utilizati pentru proceduri
+%edi        ->  (destination index) |  utilizati pentru tablouri de date         
+
+%edp        ->  (stack base pointer) |  utilizati pentru gestiunea stivei
+%esp        ->  (stack pointer)      |
+
+%eip        ->  (instruction pointer)  retine la fiecare pas adresa urmatoarei instructiuni de executat
+
+
+eax
+8b: al ah
+     \ /
+16b: ax (al+ah)
+      |
+32b: eax 
+      |
+64b: rax
+........
+%eax, %ax, %al, %ah
+32b    16b   8b   8b
+
+
+
+variabile in RAM
+--------------
+nume: .tip valoare
+
+Tipuri de date: 
+--------------
+.long   - tip de date pe 32 de biti(4 bytes)
+        - utilizat pentru stocarea intregilor
+long x = 15; -> x: .long 15
+
+.word   - tip de date pe 16b
+        - y: .word 27
+
+.byte   - tip de date pe 8b
+char ch = 'b' -> ch: .byte 'b'
+char ch = 9 -> ch: .byte 9
+
+.ascii  - utilizat pt definirea sirurilor de caractere fara '\0'(null)
+.asciiz - utilizat pt definirea sirurilor de caractere cu terminator ('\0')
+hw1: .ascii  "Hello, world!" 13ch
+hw2: .asciz "Hello, world!" 13ch + '\0' = 14ch
+
+.space  - utilizat pentru a declara un spatiu de dimensiune B bytes in memorie
+sum: .space 4
+long v[100]; -> v: .space 400
+str: .space 101 
+word w[15] -> w: .space 30
+
+
+% -> registrii
+
+$ -> constante
+  -> $x = &x (adresa din memorie a lui x)
+
+
+Instructiuni
+------------
+
+Instructiunea MOV
+[eticheta] mov source, destination
+mov reg, reg
+mov %eax, %ebx => %ebx <- %eax
+
+x: .long 15
+y: .long 17
+mov x, %eax
+mov %ecx, x
+
+mov $1, %eax
+mov $x, %edx
+movl x, y
+
+Toate instructiunile pot fi sufixate cu tipul de date
+movl 
+movw 
+movb
+
+
+Apeluri de sistem
+cin, cout, return 0(exit (0))
+
+EXIT, READ, WRITE
+- sunt implementate prin intermediul intreuperilor hardware
+int $0x80 "invoca" sistemul de operare
+
+- apelurile de sistem sunt codificate
+EXIT  - 1  |
+READ  - 5  | %eax
+WRITE - 4  |
+
+- argumentele apelurilor de sistem sunt date in ordine %ebx, %ecx, %edx
+
+Apelul EXIT
+exit(0) -> codificare 1 
+        -> argumentul 0
+
+EXIT(0): mov $1, %eax
+         mov $0, %ebx
+         int $0x80
+
+
+pg1.asm
+.data 
+// se declara toate variabilele din ram necesare
+// x: .long 30
+// hw: .asciz "hello"
+
+.text
+.global main
+main:
+    // instructiunile propriu zise
+
+    mov $1, %eax
+    mov $0, %ebx
+    int $0x80
+
+
+gcc -m32 pg1.asm -o pg1
+./pg1
+gdb pg1
+
+
+Apelul WRITE
+- codificare 4
+- are 3 argumente: %ebx = Unde vreau sa scriu (stdout = 1)
+                   %ecx = ce vreau sa scriu (adresa din RAM a sirului)
+                   %edx = cat vreau sa scriu (lungimea sirului)
+
+WRITE:
+.data
+    hw: .asciz "Hello, world!"
+.text
+.global main
+main:
+    mov $4, %eax // WRITE
+    mov $1, %ebx // STDOUT 
+    mov $hw, %ecx
+    mov $14, %edx
+    int $0x80
+
+
+test: ce s-a facut + debugger din suport de lab
