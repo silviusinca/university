@@ -1,0 +1,3 @@
+C:/Users/Silviu/university/an2/sem1/af/teme/possible-bipartition/cmake-build-debug/CMakeFiles/possible_bipartition.dir
+C:/Users/Silviu/university/an2/sem1/af/teme/possible-bipartition/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Silviu/university/an2/sem1/af/teme/possible-bipartition/cmake-build-debug/CMakeFiles/rebuild_cache.dir
