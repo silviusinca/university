@@ -109,9 +109,7 @@ int main() {
     fout << count << '\n';
 
     for (const auto& componenta : ctc) {
-        vector<int> aux = componenta.second;
-        std::sort(aux.begin(), aux.end());
-        for (auto nod : aux)
+        for (auto nod : componenta.second)
             fout << nod << ' ';
         fout << endl;
     }
