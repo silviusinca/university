@@ -51,7 +51,7 @@ char ch = 'b' -> ch: .byte 'b'
 char ch = 9 -> ch: .byte 9
 
 .ascii  - utilizat pt definirea sirurilor de caractere fara '\0'(null)
-.asciiz - utilizat pt definirea sirurilor de caractere cu terminator ('\0')
+.asciz - utilizat pt definirea sirurilor de caractere cu terminator ('\0')
 hw1: .ascii  "Hello, world!" 13ch
 hw2: .asciz "Hello, world!" 13ch + '\0' = 14ch
 
