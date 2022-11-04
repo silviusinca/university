@@ -1,0 +1,131 @@
+Instructiuni aritmetice
+add, sub, mul, div
+
+Instructiunea add
+
+add op1, op2 => op2 = op2 + op1
+add %eax, %ebx => %ebx += %eax
+add $1, %ecx == inc %ecx => %ecx++
+
+
+Instructiunea sub
+sub op1, op2 => op2 = op2 - op1
+sub %eax, %ecx => %ecx -= %eax
+sub $1, %ecx => dec %ecx => %ecx--
+
+
+Instructiunea mul
+mul op
+- functioneaza conform unui mecanism intern, prin utilizarea registrilor %eax, %edx
+mul op == (%edx, %eax)   =   %eax * op
+            destinatie       sursa
+            implicita       implicita
+op = {registru, adresa de memorie}
+
+mul op => %eax = %eax * op
+
+
+.data
+    x: .long 5
+    y: .long 3
+.text
+.global main
+main:
+    movl x, %eax
+    movl y, %edx
+    mul %ebx       // %eax <- %eax * %ebx 
+                   //           x     y
+et_exit:
+    movl $1, %eax
+    movl $0, %ebx
+    int $0x80
+
+
+mov x, %eax
+mov y, %ebx } = mull y
+mul %ebx    }
+
+mull x
+mull $2
+
+mulw, mulb
+
+Instructiunea div
+div op
+
+div op => (%edx, %eax) = (%edx, %eax) / op
+           destinatie       sursa
+           implicita      implicita
+
+%edx = restul impartirii
+%eax = catul impartirii
+
+op = {reg, adr mem}
+
+movl $0, %edx !!!
+divl op
+
+div op = (%edx, %eax) -> %eax / op
+
+
+Salturi conditionate si neconditionate
+
+Saltul neconditionat: jmp eticheta
+
+Salturi conditionate:
+- sunt salturi care depind de o relatie de ordine
+
+cmp op1, op2 // comparatia se face de la dreapta la stanga; op2 = registru!
+j<conditie> eticheta
+
+<       jl
+<=      jle
+>       jg
+>=      jge
+==      je
+!=      jne
+
+cmp op1, op2
+jl et           // op2 < op1
+
+cmp %eax, %ebx
+jge et
+// jump daca %ebx >= %eax
+
+
+
+
+Implementarea structurilor repetitive
+
+%ecx = 0
+while (%ecx < n)
+{
+    // instr 
+    %ecx++;
+}
+
+.. cod
+    movl %0, %ecx
+while:
+    cmp n, %ecx
+    je et_exit
+
+    // instructiuni
+    incl %ecx
+    jmp while
+
+
+et_exit:
+    ...
+
+
+
+instructiunea loop (indecsi de la n -> 1):
+                    (varianta clasica: 0 -> n-1)
+et:
+// instr
+    loop et
+(do .. while (--%ecx != 0))
+
+movl $5, %ecx
+
