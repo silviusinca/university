@@ -1,0 +1,108 @@
+2^32 = (1,    0)
+       edx    eax
+
+
+===============================================================
+Tablouri unidimensionale de date
+* Array-uri de tip long
+
+Declarare: 
+- daca nu stim elementele:
+n: .space 4
+v: .space 400 // 4 * 100 => maxim 400 elem
+
+- daca stim elementele:
+v: .long 5, 27, 13, 8, 101, 25, 39
+n: .long 7
+
+&(5) = v // adresa lui '5'
+&(27) = v + 4B = v + 1 * 4B // B = byte
+&(13) = v + 8B = v + 2 * 4B
+&(8) = v + 12B = v + 3 * 4B
+
+!!! v[i] = v + i * 4B !!! accesarea unui elem
+
+
+
+{a(b, c, d)
+{- a NU poate fi registru
+{- b, c sunt registri
+{- d este constanta
+{constantele care apar NU sunt prefixate de $
+^
+reprezinta continutul de memorie aflat la adresa a + b + c*d
+
+daca a = 0 notam (b, c, d) -> b + c*d               ] 
+b = adresa vectorului                               ] => accesarea v[i]
+c = indexul curent                                  ] (reprezinta continutul de memorie aflat la adresa v[i])
+d = dimensiunea tipului de date (pentru long = 4)   ]
+
+
+(movl $x, %eax == lea x, %eax)
+
+===============================================================
+Parcurgerea unui array
+.data
+    v: .long 10, 20, 30, 40, 50
+    n: .long 5
+.text
+.global main
+main:
+    movl $v, %edi //retinem adresa lui v
+    mov $0, %ecx
+
+et_loop:
+    cmp n, %ecx 
+    je et_exit
+    movl (%edi, %ecx, 4), %ebx // elementul curent se afla in %ebx
+    // prelucrarea %ebx
+    incl %ecx
+    jmp et_loop
+
+et_exit: 
+    ...
+
+
+===============================================================
+
+Apeluri din C 
+-------------
+
+* Apelul printf
+printf("S-au citit %d si %d", x, y);
+
+%d intregi
+%f float
+%s siruri
+
+
+push $2
+push %eax
+pop %ebx 
+pop %ecx
+
+// argumentele se dau in ordine inversa(pentru ca stiva)
+Apelul din asm
+.data
+    format: .asciz "S-au citit %d si %d \n"
+...
+main: 
+...
+    push y
+    push x
+    push $format
+    call printf
+    pop %ebx
+    pop %ebx
+    pop %ebx
+...
+
+
+Problema
+Fie v: .long 15, 27, 13, 8, 31, 16 un array de n: .long 6 elemente declarat in memorie. Sa se scrie un program care sa determine maximul din array si sa afiseze la stdout printr-un apel la printf 
+
+
+
+
+
+
