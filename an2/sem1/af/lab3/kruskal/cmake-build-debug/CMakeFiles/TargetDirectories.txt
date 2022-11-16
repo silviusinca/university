@@ -1,0 +1,3 @@
+C:/Users/Silviu/university/an2/sem1/af/lab3/kruskal/cmake-build-debug/CMakeFiles/kruskal.dir
+C:/Users/Silviu/university/an2/sem1/af/lab3/kruskal/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Silviu/university/an2/sem1/af/lab3/kruskal/cmake-build-debug/CMakeFiles/rebuild_cache.dir
