@@ -1,0 +1,53 @@
+Siruri de caractere
+
+Apelul scanf
+
+    identic cu formatul
+      de la printf
+         ^
+         |
+scanf(formatScanf,....)
+
+x: .space 4
+scanf("%d", &x)
+
+
+push $x
+push $formatScanf
+call scanf
+pop %ebx
+pop %ebx
+
+Elem curent este: (%edi, %ecx, 1)
+
+
+.data
+    str: .asciz "Sir de caractere"
+.text
+.global main
+main:
+    movl $str, %edi
+    movl %0, %ecx
+et_loop:
+    movb (%edi, %ecx, 1), %ah
+    cmp $0, %ah
+    je et_exit
+    // prelucram ah
+    inc %ecx
+    jmp et_loop
+et_exit:
+    ...
+
+
+    $'A'
+cmp $65, %ah (verific daca elem curent este 'A')
+je prelucrare
+jne
+
+cmp $'a', %ah
+cmp $';', %ah
+
+
+Se citeste de la stdin printr un apel scanf un sir de cel mult 50 de caract. sa se determine numarul vocalelor din sir si sa se afiseze stdout printr-un apel la printf 
+
+

@@ -106,3 +106,8 @@ Fie v: .long 15, 27, 13, 8, 31, 16 un array de n: .long 6 elemente declarat in m
 
 
 
+
+
+
+a >> n   a / (2^n)
+a << n   a * (2^n)
