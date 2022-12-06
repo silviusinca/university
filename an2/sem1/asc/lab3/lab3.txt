@@ -9,7 +9,7 @@ Tablouri unidimensionale de date
 Declarare: 
 - daca nu stim elementele:
 n: .space 4
-v: .space 400 // 4 * 100 => maxim 400 elem
+v: .space 400 // 4 * 100 => maxim 100 elem
 
 - daca stim elementele:
 v: .long 5, 27, 13, 8, 101, 25, 39
