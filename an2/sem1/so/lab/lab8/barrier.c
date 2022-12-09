@@ -8,12 +8,12 @@
 sem_t sem;
 pthread_mutex_t mtx;
 int S=0;
-    
+
 void barrier_point() {
     pthread_mutex_lock(&mtx);
     S++;
     pthread_mutex_unlock(&mtx);
-    if (S < NTHRS) {   
+    if (S < NTHRS) {
         // scade valoarea cu o unitate
         if (sem_wait(&sem)) { 
             perror(NULL); 
@@ -24,7 +24,7 @@ void barrier_point() {
         for (int i = 0; i < NTHRS; i++) {
             // creste valoarea cu o unitate si elibereaza thread-ul care asteapta de cel mai mult timp
             sem_post(&sem); 
-        } 
+        }
     }
 }
 

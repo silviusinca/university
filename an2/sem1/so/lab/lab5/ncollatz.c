@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
     }
     
     for(int i = 1; i <= argc; i++)
-    wait(NULL);
+        wait(NULL);
 
     printf("Done Parent %d Me %d\n", getppid(), getpid());
     return 0;

@@ -10,7 +10,7 @@ pthread_mutex_t mtx;
 // daca facem increase inseamna ca eliberam resurse
 int increase(int count) {
     pthread_mutex_lock(&mtx);
-    available_resources += count ;
+    available_resources += count;
     printf("Released %d resources %d remaining\n", count, available_resources);
     pthread_mutex_unlock(&mtx);
 

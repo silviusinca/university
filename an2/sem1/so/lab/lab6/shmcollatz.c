@@ -61,8 +61,7 @@ int main(int argc, char **argv) {
         wait(NULL); // asteptam sa se termine toate procesele
     }
 
-    for(int i = 1; i < argc; i++)
-    {
+    for(int i = 1; i < argc; i++) {
         shm_ptr = mmap(0, page_size, PROT_READ, MAP_SHARED, shm_fd, (i-1)*page_size);
 		printf("%s\n", shm_ptr);
 		munmap(shm_ptr, page_size);
