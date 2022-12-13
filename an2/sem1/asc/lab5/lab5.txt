@@ -1,0 +1,29 @@
+Proceduri
+%esp pointer care indica varful stivei
+0(%esp) -> varful stivei (continutul)
+
+-- stiva creste spre adrese mici; stiva scade spre adrese mari
+
+subl $4, %esp   } <=> push x
+movl x, 0(%esp) }
+
+movl 0(%esp), x } <=> pop x
+addl $4, %esp   }
+
+pop <=> addl $4, %esp
+
+- call pentru apel & ret pentru revenirea din apel
+
+
+
+Conventii de implementare:
+1. Incarcarea argumentelor se face prin intermediul stivei de la dreapta la stanga
+2. valorile returnate se vor gasi in ordine in registrii %eax, %ecx, %edx, iar apoi pe stiva
+3. Registrii %ebx, %edi, %esi, %esp, %ebp trebuie restaurati in urma apelului; Registrii %eax, %ecx, %edx NU trebuie restaurati (restaurat => valoarea dinainte de apel == valoare de dupa apel)
+4. Accesarile stivei in cadrul procedurilor vor fi facute prin intermediul registrului %ebp (base pointer)
+
+
+sa se scrie o procedura min3 care primeste 3 argumente si returneaza in %eax minimul dintre ele
+
+
+

@@ -22,12 +22,14 @@ int main(int argc, char **argv) {
                     n = 3*n+1;
             }
             printf("%d\n", n);
-        }
-        else {
-            wait(NULL);
             printf("Done parent %d Me %d \n", getppid(), getpid());
-            exit(0);
+            return 1;
         }
     }
+    
+    for(int i = 1; i <= argc; i++)
+    wait(NULL);
+
+    printf("Done Parent %d Me %d\n", getppid(), getpid());
     return 0;
 }
