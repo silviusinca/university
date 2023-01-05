@@ -1,0 +1,29 @@
+=================================================
+cod afisare vector
+
+main:
+    ...
+    movl $0, %ecx
+    movl $numLegaturi, %edi
+
+et_loop:
+    cmp N, %ecx 
+    je et_exit
+
+    movl (%edi, %ecx, 4), %ebx 
+    
+    pushl %ecx
+
+    push %ebx
+    push $formatPrintf
+    call printf
+    pop %ebx
+    pop %ebx  
+
+    popl %ecx
+
+    incl %ecx
+    jmp et_loop  
+    
+
+=================================================

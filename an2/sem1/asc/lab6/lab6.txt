@@ -1,0 +1,39 @@
+Recapitulare
+
+- implementarea procedurilor in x86 (conventii):
+
+1. Incarcarea argumentelor: prin intermediul stivei de la dreapta la stanga.
+    proc(x, y, z)   x y z sunt .long
+    { push z
+  - { push y
+    { push x
+
+2. Returnarea valorilor se realizeaza in ordine, in registrii:
+    %eax, %ecx, %edx, ...
+
+3. Restaurarea cadrului de apel:
+    - registrii %ebx, %edi, %esi, %ebp
+trebuie restaurati in urma apelului 
+
+proc: 
+    ...
+    push %esi
+    push %ebx
+    ...
+    pop %ebx
+    pop %esi
+    ...
+
+    - registrii %eax, %ecx, %edx NU trebuie restaurati
+
+4. Registrul %ebp trebuie utilizat in cadrul de apel
+----------------------------------------------------
+
+push x  [ subl $4, %esp
+        [ movl x, 0(%esp)
+
+pop x   [ mov 0(%esp), x
+        [ addl $4, %esp
+
+
+nu ai voie sa fol variabile din .data in proceduri

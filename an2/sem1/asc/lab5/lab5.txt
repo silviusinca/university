@@ -25,5 +25,3 @@ Conventii de implementare:
 
 sa se scrie o procedura min3 care primeste 3 argumente si returneaza in %eax minimul dintre ele
 
-
-

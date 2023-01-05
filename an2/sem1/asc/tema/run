@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gcc -m32 233_Sinca_SilviuGabriel_0.s -o 233_Sinca_SilviuGabriel_0
+./233_Sinca_SilviuGabriel_0 < input.txt
