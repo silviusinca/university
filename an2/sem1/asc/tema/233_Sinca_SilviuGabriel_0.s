@@ -11,7 +11,10 @@
     indexColoana: .space 4
 
     formatScanf: .asciz "%d"
-    formatPrintf: .asciz "Numarul este: %d\n"
+    formatPrintf: .asciz "%d "
+    formatPrintf2: .asciz "%d: %d\n"
+    linieNoua: .asciz "\n"
+
 
 .text
 .global main
@@ -58,89 +61,91 @@ et_cont_citire:
 
 et_citire_noduri:
     cmp N, %ecx
-    je et_exit
+    je et_afis
 
     movl (%edi, %ecx, 4), %ebx 
 
     incl %ecx
     cmp $0, %ebx
     je et_citire_noduri
-
-    jmp et_citire_nod_legatura_actual
-
-et_citire_nod_legatura_actual:
-    pushl %ecx
-
-    
-
     movl $0, index
-    movl index, %ecx
+    jmp et_for_citire_noduri
 
-et_for_citire:
+et_for_citire_noduri:
+    cmp index, %ebx
+    je et_citire_noduri
 
+    pushl %ecx
+    pushl %ebx
 
+	pushl $elemCurent
+	pushl $formatScanf
+	call scanf
+	popl %ebx
+	popl %ebx
+
+    popl %ebx
     popl %ecx
 
-    jmp et_citire_noduri
+    movl %ecx, %edx
+
+    decl %edx
+	movl %edx, %eax
+	movl $0, %edx
+	mull N
+	addl elemCurent, %eax
+
+    lea matrice, %esi
+	movl $1, (%esi, %eax, 4)
+
+	incl index
+	jmp et_for_citire_noduri
 
 
 et_afis:
-    push N
-    push $formatPrintf
-    call printf
-    pop %ebx
-    pop %ebx    
-
-
-et_afis_matr:
-	movl $0, lineIndex
-	for_lines:
-		movl lineIndex, %ecx
-		cmp %ecx, n
+	movl $0, indexLinie
+	linie:
+		movl indexLinie, %ecx
+		cmp %ecx, N
 		je et_exit
 		
-		movl $0, columnIndex
-		for_columns:
-			movl columnIndex, %ecx
-			cmp %ecx, n
-			je cont
+		movl $0, indexColoana
+		coloana:
+			movl indexColoana, %ecx
+			cmp %ecx, N
+			je et_cont
 			
-			// afisez matrix[lineIndex][columnIndex]
-			// lineIndex * n + columnIndex
-			movl lineIndex, %eax
+			movl indexLinie, %eax
 			movl $0, %edx
-			mull n
-			addl columnIndex, %eax
-			// %eax = lineIndex * n + columnIndex
+			mull N
+			addl indexColoana, %eax
 			
-			lea matrix, %edi
+			lea matrice, %edi
 			movl (%edi, %eax, 4), %ebx
-			
+
+            pushl %ecx
 			pushl %ebx
 			pushl $formatPrintf
 			call printf
 			popl %ebx
 			popl %ebx
-			
-			pushl $0
-			call fflush
-			popl %ebx
-			
-			incl columnIndex
-			jmp for_columns
-		
-	cont:
-		movl $4, %eax
-		movl $1, %ebx
-		movl $newLine, %ecx
-		movl $2, %edx
-		int $0x80
-		
-		incl lineIndex
-		jmp for_lines
-		
+            popl %ecx
 
+			incl indexColoana
+			jmp coloana
+		
+	et_cont:
+
+        pushl $linieNoua
+        call printf
+        popl %ebx
+		
+		incl indexLinie
+		jmp linie
+
+    
 et_exit:
+
     movl $1, %eax
     movl $0, %ebx
     int $0x80
