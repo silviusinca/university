@@ -12,9 +12,7 @@
 
     formatScanf: .asciz "%d"
     formatPrintf: .asciz "%d "
-    formatPrintf2: .asciz "%d: %d\n"
     linieNoua: .asciz "\n"
-
 
 .text
 .global main
@@ -124,11 +122,17 @@ et_afis:
 			movl (%edi, %eax, 4), %ebx
 
             pushl %ecx
+
 			pushl %ebx
 			pushl $formatPrintf
 			call printf
 			popl %ebx
 			popl %ebx
+
+			pushl $0
+			call fflush
+			popl %ebx
+
             popl %ecx
 
 			incl indexColoana
@@ -136,15 +140,11 @@ et_afis:
 		
 	et_cont:
 
-        pushl $linieNoua
-        call printf
-        popl %ebx
-		
 		incl indexLinie
 		jmp linie
-
     
 et_exit:
+
 
     movl $1, %eax
     movl $0, %ebx
