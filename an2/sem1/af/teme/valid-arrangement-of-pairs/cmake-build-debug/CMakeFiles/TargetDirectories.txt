@@ -1,0 +1,3 @@
+/Users/silviu/university/an2/sem1/af/teme/valid-arrangement-of-pairs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/silviu/university/an2/sem1/af/teme/valid-arrangement-of-pairs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/silviu/university/an2/sem1/af/teme/valid-arrangement-of-pairs/cmake-build-debug/CMakeFiles/valid_arrangement_of_pairs.dir

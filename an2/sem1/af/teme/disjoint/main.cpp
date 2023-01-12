@@ -21,7 +21,6 @@ int main() {
     fin >> n >> m;
 
     tata.resize(n+1);
-    vector<int> inaltime(n+1);
 
     for (int i = 1; i <= m; i++) {
         fin >> op >> x >> y;
@@ -29,19 +28,7 @@ int main() {
         if (op == 1) {
             int tx = radacina(x);
             int ty = radacina(y);
-            int hx = inaltime[tx];
-            int hy = inaltime[ty];
-
-            if (hx > hy) {
-                tata[ty] = tx;
-            }
-            else if(hx < hy) {
-                tata[tx] = ty;
-            }
-            else {
-                tata[ty] = tx;
-                inaltime[tx]++;
-            }
+            tata[ty] = tx;
         }
         else if (op == 2) {
             if (radacina(x) == radacina(y))
