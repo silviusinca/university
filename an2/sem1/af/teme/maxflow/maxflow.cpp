@@ -47,6 +47,8 @@ int main() {
 
 
     while (bfs()) {
+
+        
         for (int i = 1; i < N; i++) {
             if (sel[i] == 1 && matrice_ad[i][end] > 0) {
                 int node = end;
