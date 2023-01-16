@@ -49,6 +49,7 @@ int main() {
         matrice_ad[x][y] = capacitate;
     }
 
+
     while (bfs()) {
         for (int i = 1; i < N; i++) {
             if (sel[i] == 1 && matrice_ad[i][end] > 0) {
