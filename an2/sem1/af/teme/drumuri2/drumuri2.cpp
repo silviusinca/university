@@ -10,13 +10,12 @@ ofstream fout("drumuri2.out");
 
 int N, M;
 
-bool bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<int> &parinte) {
-    vector<bool> sel;
+int bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<int> &parinte) {
+    vector<int> sel(N * 2 + 2, 0);
     queue<int> bfs;
-    sel.resize(N * 2 + 2, false);
     parinte.resize(N * 2 + 2);
     bfs.push(0);
-    sel[0] = true;
+    sel[0] = 1;
     parinte[0] = -1;
 
     while (!bfs.empty()) {
@@ -24,22 +23,22 @@ bool bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<
         bfs.pop();
         
         if (nod == N * 2 + 1)
-            return true;
+            return 1;
 
         for (auto nodAux: lista_ad[nod]) {
             if (!sel[nodAux] && capacitate[nod][nodAux] > 0) {
                 bfs.push(nodAux);
-                sel[nodAux] = true;
+                sel[nodAux] = 1;
                 parinte[nodAux] = nod;
             }
         }
     }
-    return false;
+    return 0;
 }
 
 int main() {
     fin >> N >> M;
-    int nodParinte,maxFlux = 0;
+    int nodParinte, maxFlux = 0;
     vector<int> parinte;
     vector<vector<int>> lista_ad(N * 2 + 2), capacitate(N * 2 + 2, vector<int>(N * 2 + 2, 0));
 
@@ -61,7 +60,6 @@ int main() {
         capacitate[x][N + y] = 1;
         lista_ad[x].push_back(N + y);
     }
-
 
     while (bfs(capacitate, lista_ad, parinte)) {
         int flux = INT_MAX, nod = M + N + 1;

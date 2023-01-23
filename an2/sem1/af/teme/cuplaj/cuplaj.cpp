@@ -10,19 +10,20 @@ ofstream fout("cuplaj.out");
 int N, M;
 
 int bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<int> &parinte) {
-    vector<int> sel;
+    vector<int> sel (N + M + 2, 0);
     queue<int> bfs;
-    sel.resize(N + M + 2, 0);
     parinte.resize(N + M + 2);
     bfs.push(0);
+    
     sel[0] = 1;
     parinte[0] = -1;
 
     while (!bfs.empty()) {
         int nod = bfs.front();
         bfs.pop();
-        if (nod == N + M + 1)
+        if (nod == N + M + 1) {
             return 1;
+        }
         for (auto vecin: lista_ad[nod]) {
             if (!sel[vecin] && capacitate[nod][vecin] > 0) {
                 bfs.push(vecin);
@@ -37,7 +38,7 @@ int bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<i
 int main() {
     vector<int> parinte(N+M+2);
     vector<vector<int>> capacitate(N + M + 2, vector<int>(N + M + 2, 0)), lista_ad(N + M + 2);
-    int nodeParent, E, maxFlux = 0;
+    int nodParinte, E, maxFlux = 0;
     fin >> N >> M >> E;
 
 
@@ -66,17 +67,17 @@ int main() {
     while (bfs(capacitate, lista_ad, parinte)) {
         int flux = INT_MAX, nod = M + N + 1;
         while (nod) {
-            nodeParent = parinte[nod];
-            flux = min(flux, capacitate[nodeParent][nod]);
+            nodParinte = parinte[nod];
+            flux = min(flux, capacitate[nodParinte][nod]);
             nod = parinte[nod];
         }
         if (flux) {
             nod = M + N + 1;
             while (nod) {
-                nodeParent = parinte[nod];
-                capacitate[nodeParent][nod] -= flux;
-                capacitate[nod][nodeParent] += flux;
-                lista_ad[nod].push_back(nodeParent);
+                nodParinte = parinte[nod];
+                capacitate[nodParinte][nod] -= flux;
+                capacitate[nod][nodParinte] += flux;
+                lista_ad[nod].push_back(nodParinte);
                 nod = parinte[nod];
             }
         }

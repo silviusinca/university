@@ -10,29 +10,28 @@ ofstream fout("harta.out");
 
 int N;
 
-bool bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<int> &parinte) {
-    vector<bool> sel;
+int bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<int> &parinte) {
+    vector<int> sel(2 * N + 2, 0);
     queue<int> bfs;
-    sel.resize(2 * N + 2, false);
     parinte.resize(2 * N + 2);
     bfs.push(0);
-    sel[0] = true;
+    sel[0] = 1;
     parinte[0] = -1;
 
     while (!bfs.empty()) {
         int node = bfs.front();
         bfs.pop();
         if (node == 2 * N + 1)
-            return true;
+            return 1;
         for (auto nodAux: lista_ad[node]) {
             if (!sel[nodAux] && capacitate[node][nodAux] > 0) {
                 bfs.push(nodAux);
-                sel[nodAux] = true;
+                sel[nodAux] = 1;
                 parinte[nodAux] = node;
             }
         }
     }
-    return false;
+    return 0;
 }
 
 int main() {

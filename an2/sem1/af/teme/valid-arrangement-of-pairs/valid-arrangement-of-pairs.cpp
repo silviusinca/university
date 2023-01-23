@@ -7,6 +7,9 @@
 /*
  * 
  - consideram multimea perechilor ca fiind muchiile unui graf orientat ([[5,1],[4,5],[11,9],[9,4]])
+ - pentru a afisa raspunsul corect ne folosim de un fel de dfs cu care construim circuitul
+ - ne ducem pe muchii nevizitate si le eliminam pana ne blocam; apoi revenim la cel 
+     mai apropiat nod care are muchii nevizitate(in else-ul din while) si repetam procesul pana am folosit toate muchiile
 */
 using namespace std;
 

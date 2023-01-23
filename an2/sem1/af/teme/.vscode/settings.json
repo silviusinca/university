@@ -5,6 +5,10 @@
         "stack": "cpp",
         "list": "cpp",
         "utility": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "iosfwd": "cpp",
+        "queue": "cpp"
     }
 }

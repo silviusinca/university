@@ -16,8 +16,9 @@ public:
         }
         for (auto account : secondAccount) {
             // sarim peste secondAccount[0] care este numele persoanei
-            if (account == secondAccount[0])
+            if (account == secondAccount[0]) {
                 continue;
+            }
             for (auto mail : firstAccout) {
                 if (mail == account) {
                     return 1;
@@ -60,7 +61,7 @@ public:
         vector<int> adj_list[accounts.size()];
         
         for (int i = 0; i < accounts.size(); i++) {
-            for (int j = i+1; j < accounts.size(); j++) {
+            for (int j = i + 1; j < accounts.size(); j++) {
                 // verificam daca apartin aceluiasi user
                 int check = compare(accounts[i], accounts[j]);
 				// si daca apartin ii facem lista de adiacenta

@@ -11,6 +11,9 @@ public:
 
         string sol = "";
 
+// - intializam si cream matricea pentru programarea dinamica in care crestem matrice[i][j] in 
+//      momentul in care gasim egalitate intre 2 carectere din siruri, altfel luam maximul
+// - matricea va avea nr de linii = lungimea primului sir si cel de coloane = cu lungimea celui de-al doilea
         vector<vector<int>> matrice(m+1, vector<int>(n + 1, 0));
         for (int i = 1; i < m + 1; i++) {
             for (int j = 1; j < n+1; j++) {
@@ -22,7 +25,6 @@ public:
                 }
             }
         }
-
         // traversam matricea de la ultimul element
         // daca gasim acelasi caracter il adaugam la solutie, 
         // altfel, daca nu sunt egale, vom adauga la solutie maximul care dintre matrice[i-1][j] si matrice[i][j-1]  
