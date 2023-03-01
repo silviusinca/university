@@ -38,25 +38,23 @@ class Graf:
 
     def succesori(self, nod):
         noduri = []
-
-        for liste in self.graf:
-            for vecin in liste:
-                if vecin.parinte == nod or nod.parinte == vecin:
-                    noduri.append(vecin)
+        for vecin in graf[nod.info]:
+            if vecin.parinte == nod: # de uitat in rezolvare
+                noduri.append(Nod(vecin, nod))
         
         return noduri
 
 solutii = []
 
-def dfs(graf, nod, NSOL):
+def dfs(graf, nod, NSol):
     if graf.scop(nod.informatie):
         solutii.append(nod)
-        NSOL -= 1
+        NSol -= 1
 
-    if NSOL == 0:
+    if NSol == 0:
         return
-
+        
     for succesor in graf.succesori(nod):
         if not succesor.vizitat():
-            dfs(graf, succesor, NSOL)
+            dfs(graf, succesor, NSol)
 
