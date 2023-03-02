@@ -140,6 +140,18 @@ et_afis:
 		
 	et_cont:
 
+		pushl %ecx
+		pushl %edx
+
+		movl $4, %eax
+		movl $1, %ebx 
+		movl $linieNoua, %ecx
+		movl $1, %edx 
+		int $0x80 
+
+		popl %edx
+		popl %ecx
+
 		incl indexLinie
 		jmp linie
     

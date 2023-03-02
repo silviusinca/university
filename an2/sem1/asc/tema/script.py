@@ -1,22 +1,24 @@
 import os
 import subprocess
-
 inputArray = [
-          ["test1_1.in"]  #in aceasta lista puteti adauga fisiere cu exemple de input pentru cerinta 1
-        , ["test2_1.in"]  #in aceasta lista puteti adauga fisiere cu exemple de input pentru cerinta 2
-        , ["test3_1.in"]  #in aceasta lista puteti adauga fisiere cu exemple de input pentru cerinta 3
+          ["test1_0.in", "test1_1.in", "test1_2.in", "test1_3.in", "test1_4.in"] 
+        , ["test2_0.in", "test2_1.in", "test2_2.in", "test2_3.in", "test2_4.in"] 
+        , ["test3_0.in", "test3_1.in"] 
 ]
 outputArray = [
-          ["0 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 "]  #output-ul pentru primul test din lista pentru cerinta 1 (in aceasta lista puteti adauga output-ul pentru testele adaugate de voi)
-        , ["2"] #output-ul pentru primul test din lista pentru cerinta 2 (in aceasta lista puteti adauga output-ul pentru testele adaugate de voi)
-        , ["2"] #output-ul pentru primul test din lista pentru cerinta 3 (in aceasta lista puteti adauga output-ul pentru testele adaugate de voi)
+          ["0 1 1 1 1 0 1 1 1 1 0 1 1 1 1 0 ",
+          "0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 ",
+          "0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 ",
+          "0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 ",
+          "0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 "]  
+        , ["2", "0", "1", "4", "1"] 
+        , ["2", "0"]
 ]
 points = [
-          [50]
-        , [30]
-        , [20]
+          [10, 10, 10, 10, 10]
+        , [6, 6, 6, 6, 6]
+        , [10, 10]
 ]
-
 firstSource = 0
 secondSource = 0
 subprocess.call(["rm","-f", "cerinta1_2", "cerinta3"])
