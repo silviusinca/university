@@ -8,24 +8,20 @@ using namespace std;
 ifstream fin("maxflow.in");
 ofstream fout("maxflow.out");
 
-
-// folosim bfs pentru a face un algoritm de tip Edmonds-Karp si gasim un drum de la start la destinatie
-// ne folosim de muchiile reziduale pentru a ne putea intoarce intre noduri
-
-int parinte[1001], sel[1001];
-vector<vector<int>> matrice_ad(1001, vector<int>(1001, 0));
 queue<int> q;
 int M, N, maxFlux;
+vector<vector<int>> matrice_ad(N, vector<int>(N, 0));
+vector<int> parinte(N, 0), sel(N, 0);
 
 int bfs() {
-    memset(sel, 0, sizeof(sel));
-    memset(parinte, 0, sizeof(parinte));
     q.push(1);
     sel[1] = 1;
     while (!q.empty()) {
         int node = q.front();
         q.pop();
-        if (node == N) return 1;
+        if (node == N) {
+            return 1;
+        }
 
         for (int i = 1; i <= N; i++) {
             if (!sel[i] && matrice_ad[node][i] > 0) {
@@ -55,10 +51,12 @@ int main() {
                 int node = end;
                 int flux = INT_MAX;
                 parinte[end] = i;
+
                 while (parinte[node] > 0) {
                     flux = min(flux, matrice_ad[parinte[node]][node]);
                     node = parinte[node];
                 }
+                
                 if (flux) {
                     node = end;
                     while (parinte[node] > 0) {

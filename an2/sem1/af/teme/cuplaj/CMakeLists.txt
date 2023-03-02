@@ -3,4 +3,4 @@ project(cuplaj)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cuplaj main.cpp)
+add_executable(cuplaj cuplaj.cpp)

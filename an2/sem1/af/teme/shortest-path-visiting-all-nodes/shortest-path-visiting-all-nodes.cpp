@@ -8,8 +8,6 @@ using namespace std;
 /*
  * Vom face un fel de bfs, doar ca avem voie sa ne intoarcem si sa revizitam nodurile pentru a gasi solutia
  * Ne folosim de 2 stringuri in care vom avea statusul vizitelor, daca am vizitat sau nu nodurile
- *
- *
  * */
 class Solution {
 public:
@@ -41,6 +39,7 @@ public:
                 pair<int, string> front = queue.front();
                 queue.pop();
 
+                // verificam daca am trecut prin toate nodurile
                 if (front.second == vizitate) {
                     return length;
                 }

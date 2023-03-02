@@ -5,10 +5,12 @@
 #include <stack>
 
 /*
- * consideram multimea perechilor ca fiind muchiile unui graf orientat si aplicam algoritmul lui Hierholzer pentru a afla daca avem un ciclu eulerian sau nu
- *
- * */
-
+ * 
+ - consideram multimea perechilor ca fiind muchiile unui graf orientat ([[5,1],[4,5],[11,9],[9,4]])
+ - pentru a afisa raspunsul corect ne folosim de un fel de dfs cu care construim circuitul
+ - ne ducem pe muchii nevizitate si le eliminam pana ne blocam; apoi revenim la cel 
+     mai apropiat nod care are muchii nevizitate(in else-ul din while) si repetam procesul pana am folosit toate muchiile
+*/
 using namespace std;
 
 class Solution {
@@ -18,6 +20,7 @@ public:
         unordered_map<int, int> muchii;
         unordered_map<int, int> grade;
 
+        // construim graful si calculam gradele
         for (auto pereche : pairs) {
             graf[pereche[0]].push_back(pereche[1]);
             muchii[pereche[0]]++;

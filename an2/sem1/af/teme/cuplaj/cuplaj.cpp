@@ -1,37 +1,34 @@
-#include <fstream>
-#include <iostream>
-#include <queue>
 #include <vector>
+#include <iostream>
+#include <fstream>
+#include <queue>
 
 using namespace std;
-
 ifstream fin("cuplaj.in");
 ofstream fout("cuplaj.out");
 
-int parinte[20001];
-int matrice_ad[20001][20001];
-int n, m, e, nod;
-int sel[20001];
+int N, M;
 
-int bfs() {
-    queue<int> q;
-
-    memset(sel, 1, sizeof(sel));
-    memset(parinte, 0, sizeof(parinte));
-
-    q.push(0);
+int bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<int> &parinte) {
+    vector<int> sel (N + M + 2, 0);
+    queue<int> bfs;
+    parinte.resize(N + M + 2);
+    bfs.push(0);
+    
     sel[0] = 1;
+    parinte[0] = -1;
 
-    while (!q.empty()) {
-        int node = q.front();
-        q.pop();
-        if (node == n)
+    while (!bfs.empty()) {
+        int nod = bfs.front();
+        bfs.pop();
+        if (nod == N + M + 1) {
             return 1;
-        for (int i = 0; i < n; i++) {
-            if (!sel[i] && matrice_ad[node][i] > 0) {
-                q.push(i);
-                sel[i] = 1;
-                parinte[i] = node;
+        }
+        for (auto vecin: lista_ad[nod]) {
+            if (!sel[vecin] && capacitate[nod][vecin] > 0) {
+                bfs.push(vecin);
+                sel[vecin] = 1;
+                parinte[vecin] = nod;
             }
         }
     }
@@ -39,58 +36,63 @@ int bfs() {
 }
 
 int main() {
-    int maxFlux = 0, flux;
-    fin >> n >> m >> e;
+    vector<int> parinte(N+M+2);
+    vector<vector<int>> capacitate(N + M + 2, vector<int>(N + M + 2, 0)), lista_ad(N + M + 2);
+    int nodParinte, E, maxFlux = 0;
+    fin >> N >> M >> E;
 
-    for (int i = 0; i < e; i++) {
+
+    for (int i = 1; i <= N; i++) {
+        capacitate[0][i] = 1; 
+        lista_ad[0].push_back(i);
+    }
+
+
+    for (int i = N + 1; i <= N + M; i++) {
+        capacitate[i][N + M + 1] = 1;
+        lista_ad[i].push_back(N + M + 1);
+        lista_ad[i].push_back(i - N); 
+        capacitate[i][i - N] = 1;
+    }
+
+
+    for (int i = 0; i < E; i++) {
         int x, y;
         fin >> x >> y;
-        matrice_ad[x][n + y] = 1;
+        capacitate[x][N + y] = 1;
+        lista_ad[x].push_back(N + y);
     }
 
-    for (int i = 1; i <= n; i++) {
-        matrice_ad[0][i] = 1;
-    }
 
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            if (i != j) {
-                matrice_ad[i][n + j] = 1; 
+    while (bfs(capacitate, lista_ad, parinte)) {
+        int flux = INT_MAX, nod = M + N + 1;
+        while (nod) {
+            nodParinte = parinte[nod];
+            flux = min(flux, capacitate[nodParinte][nod]);
+            nod = parinte[nod];
+        }
+        if (flux) {
+            nod = M + N + 1;
+            while (nod) {
+                nodParinte = parinte[nod];
+                capacitate[nodParinte][nod] -= flux;
+                capacitate[nod][nodParinte] += flux;
+                lista_ad[nod].push_back(nodParinte);
+                nod = parinte[nod];
             }
         }
+        maxFlux += flux;
     }
 
-    while (bfs())
-        for (int i = 1; i <= m + n; i++) 
-            if (sel[n + i] && matrice_ad[n + i][m + n] > 0) {
-                
-                flux = INT_MAX;
-                int node = n + m;
 
-                while (parinte[node] > 0) {
-                    flux = min(flux, matrice_ad[parinte[node]][node]);
-                    node = parinte[node];
-                }
-
-                if (flux) {
-                    node = n + m;
-                    while (parinte[node] > 0) {
-                        matrice_ad[parinte[node]][node] -= flux;
-                        matrice_ad[node][parinte[node]] += flux;
-                        node = parinte[node];
-                    }
-                }
-
-                maxFlux += flux;
+    fout << maxFlux << endl;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 0; j < lista_ad[i].size(); j++) {
+            if (capacitate[i][lista_ad[i][j]] == 0 && lista_ad[i][j] > N) {
+                fout << i << " " << lista_ad[i][j] - N << endl;
             }
-        
-    
-
-    cout << maxFlux << endl;
-    for (int i = 1; i <= n; i++)
-        for (int j = n + 1; j <= n + m; j++)
-            if (matrice_ad[i][n + j] == 0 && matrice_ad[n + j][i] == 1)
-                fout << i << " " << j << endl;
+       }
+    }
 
     return 0;
 }

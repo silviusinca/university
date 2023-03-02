@@ -4,96 +4,88 @@
 #include <queue>
 
 using namespace std;
+
 ifstream fin("harta.in");
 ofstream fout("harta.out");
 
-int n;
-vector<pair<int, int>> grade;
-int matrice_ad[205][205];
-int parinte[101];
-int sel[101];
+int N;
 
-// formam doua multimi: prima mulțime o legam la nodul de start si a doua de nodul destinatie.
-// intre nodurile din cele 2 multimi adaugam muchii cu capacitatea = 1
-
-int bfs() {
-    queue<int> q;
-    memset(sel, false, sizeof(sel));
-    memset(parinte, -1, sizeof(parinte));
-
-    q.push(0);
+int bfs(vector<vector<int>> &capacitate, vector<vector<int>> &lista_ad, vector<int> &parinte) {
+    vector<int> sel(2 * N + 2, 0);
+    queue<int> bfs;
+    parinte.resize(2 * N + 2);
+    bfs.push(0);
     sel[0] = 1;
+    parinte[0] = -1;
 
-    while (!q.empty()) {
-
-        int node = q.front();
-        q.pop();
-        if (node == n)
+    while (!bfs.empty()) {
+        int node = bfs.front();
+        bfs.pop();
+        if (node == 2 * N + 1)
             return 1;
-
-        for (int i = 0; i < n; i++)
-            if (!sel[i] && matrice_ad[node][i] > 0) {
-                q.push(i);
-                sel[i] = 1;
-                parinte[i] = node;
+        for (auto nodAux: lista_ad[node]) {
+            if (!sel[nodAux] && capacitate[node][nodAux] > 0) {
+                bfs.push(nodAux);
+                sel[nodAux] = 1;
+                parinte[nodAux] = node;
             }
+        }
     }
-
     return 0;
 }
 
 int main() {
-    fin >> n;
-    grade.resize(n + 1);
-    for (int i = 1; i <= n; i++) {
+    fin >> N;
+    int nodParinte, maxFlux = 0;
+    vector<int> parinte(2 * N + 2);
+    vector<vector<int>> lista_ad, capacitate;
+    lista_ad.resize(2 * N + 2);
+    capacitate.resize(2 * N + 2, vector<int>(2 * N + 2, 0));
+
+    for (int i = 1; i <= N; i++) {
         int x, y;
-        fin >> x >> y;
-        grade[i] = {x, y};
+        fin >> y >> x;
+        capacitate[0][i] = y;
+        lista_ad[0].push_back(i);
+        capacitate[i + N][2 * N + 1] = x;
+        lista_ad[i + N].push_back(2 * N + 1);
     }
 
-    for (int i = 1; i <= n; i++) {
-        matrice_ad[0][i] = grade[i].first;
-        matrice_ad[i + n][2 * n + 1] = grade[i].second;
-    }
-
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            if (i != j) {
-                matrice_ad[i][n + j] = 1;
+    for (int i = 1; i <= N; i++) {
+        for (int j = N + 1; j <= 2 * N; j++) {
+            if (i != j - N) {
+                capacitate[i][j] = 1;
+                lista_ad[i].push_back(j);
             }
         }
     }
 
-    int maxFlux = 0;
-    while (bfs()) {
-        for (int i = 1; i <= 2 * n + 1; i++) {
-            if (sel[i] && matrice_ad[i][2 * n + 1] > 0) {
-                int flux = INT_MAX;
-
-                int node = parinte[i];
-                while (node != -1) {
-                    flux = min(flux, matrice_ad[parinte[node]][node]);
-                    node = parinte[node];
-                }
-                if (flux) {
-                    node = parinte[i];
-                    while (node != -1) {
-                        matrice_ad[parinte[node]][node] -= flux;
-                        matrice_ad[node][parinte[node]] += flux;
-                        node = parinte[node];
-                    }
-                    maxFlux += flux;
-                }
+    while (bfs(capacitate, lista_ad, parinte)) {
+        int flux = INT32_MAX, node = 2 * N + 1;
+        while (node) {
+            nodParinte = parinte[node];
+            flux = min(flux, capacitate[nodParinte][node]);
+            node = parinte[node];
+        }
+        if (flux) {
+            node = 2 * N + 1;
+            while (node) {
+                nodParinte = parinte[node];
+                if (!capacitate[node][nodParinte])
+                    lista_ad[node].push_back(nodParinte);
+                capacitate[nodParinte][node] -= flux;
+                capacitate[node][nodParinte] += flux;
+                node = parinte[node];
             }
         }
+        maxFlux += flux;
     }
-    
-    cout << maxFlux << endl;
-    for (int i = 1; i <= n; i++) {
-        for (int j = n + 1; j <= 2 * n; j++) {
-            if (matrice_ad[j][i]) {
-                cout << i << ' ' << j - n << endl;
-                cout << "what";
+
+    fout << maxFlux << endl;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 0; j < lista_ad[i].size(); j++) {
+            if (capacitate[i][lista_ad[i][j]] == 0 && lista_ad[i][j] > N) {
+                fout << i << " " << lista_ad[i][j] - N << endl;
             }
         }
     }

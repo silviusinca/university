@@ -3,12 +3,6 @@
 
 using namespace std;
 
-/*
- * pentru problema aceasta am folosit concepte din programarea dinamica;
- * parcurg ambele siruri si voi memora constant intr-un vector numarul de aparitii identice
- *
- * */
-
 class Solution {
 public:
     int longestCommonSubsequence(string text1, string text2) {
