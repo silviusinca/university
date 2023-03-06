@@ -34,7 +34,7 @@ class Graf:
         self.scop = _scop
 
     def scop(self, infoNod):
-        return infoNod in self.scop
+        
 
     def succesori(self, nod):
         noduri = []
@@ -44,13 +44,18 @@ class Graf:
         
         return noduri
 
-#Graf.N= ce s-a citit
+# Graf.N = ce s-a citit
 
 f = open("fisier.txt", "r")
-date = [int(x) for x in f.read()]
+date = [int(x) for x in f.readline().split()]
 
 N = date[0] # numarul de misionari si canibali
 M = date[1] # numarul de locuri in barca
+locatie = 1
+
+stare = [N, M, locatie]
+
+
 
 succesori(nod)
 #mal curent = mal cu barca
@@ -62,8 +67,6 @@ if nod.info[2] == 1: #mal stang(initial)
     NMmal_opus   = N - NMmal_curent
 # else:
      
-
-# mis barca
 maxMisionariBarca = min(Graf.M, NMmal_curent)
 for mb in range(maxMisionariBarca+1):
 	if mb == 0:
